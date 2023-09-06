@@ -1,3 +1,75 @@
 //====================================================================================================
+.hero {
+    background-color: $bgColor;
+    display: grid;
+    min-height: 100vh;
+    padding: toRem(80) toRem(15) toRem(60) toRem(15);
+    grid-template-columns: auto 1fr auto;
+    // .hero__image
+    &__image-ibg {
+        @include adaptiveValue("width", 412, 200, 0, $containerWidth, 991.98);
+        border-radius: toRem(24);
+        overflow: hidden; // приберає білі закруглення
+        img {
+            object-position: top;
+        }
+    }
+    // .hero__body
+    &__body {
+        display: flex;
+        flex-direction: column;
+        @include adaptiveValue(
+            "padding-left",
+            83,
+            15,
+            0,
+            $containerWidth,
+            991.98
+        ); // Відступи беспеки
+        @include adaptiveValue(
+            "padding-right",
+            83,
+            15,
+            0,
+            $containerWidth,
+            991.98
+        ); // Відступи беспеки
+    }
+    // .hero__block-content
+    &__content {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    // .hero__block-header
+    &__block-header {
+        max-width: toRem(670);
+        // .block-header__title
+        .block-header__title {
+        }
+    }
+    // .heero__items
+    &__items {
+        &:not(:last-child) {
+            margin-bottom: toRem(24);
+        }
+    }
+}
+.items-heero {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: toRem(52);
+    // .items-heero__item
+    &__item {
+        color: $greyColor;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+}
 
 //====================================================================================================
