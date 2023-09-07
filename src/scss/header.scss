@@ -71,7 +71,7 @@
             overflow: auto; // scroll vertical
             display: flex;
             flex-direction: column;
-			transition: left 0.5s;
+			transform: left 0.5s;
             &::before {
                 content: "";
                 position: fixed;

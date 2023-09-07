@@ -44,3 +44,18 @@
 </div> 
 */
 //==========================================================================================================================================
+
+.done {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: toRem(40);
+    row-gap: toRem(3);
+    // .done__item
+    &__item {
+            color: $bgColorSky;
+            padding-left: toRem(32);
+            font-size: toRem(20);
+            line-height: 1.06;
+            background: url('@img/icons/check-blue.svg') left toRem(1) no-repeat;
+		}
+}
