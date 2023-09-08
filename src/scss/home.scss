@@ -1,10 +1,44 @@
 //====================================================================================================
 .hero {
     background-color: $bgColor;
-    display: grid;
-    min-height: 100vh;
     padding: toRem(80) toRem(15) toRem(60) toRem(15);
-    grid-template-columns: auto 1fr auto;
+    min-height: 100vh;
+    display: grid;
+    position: relative;
+    @media (min-width: $tablet) {
+        grid-template-columns: auto 1fr auto;
+
+
+        &::before,
+        &::after {
+            content: "";
+            @include adaptiveValue(
+                "width",
+                470,
+                230,
+                0,
+                $containerWidth,
+                991.98
+            );
+            position: absolute;
+            bottom: 0;
+            height: toRem(50);
+            background-color: $bgColorWhite;
+            
+        }
+        &::before {
+            left: 0;
+            clip-path: polygon(0% 0%, 90% 0, 100% 100%, 0% 100%); /* Визначення форми обрізання */
+        }
+        &::after {
+            right: 0;
+            clip-path: polygon(50px 0, 100% 0, 100% 100%, 0% 100%); /* Визначення форми обрізання */
+        }
+    }
+    @media (max-width:$tablet){
+        padding: toRem(80) toRem(15) toRem(30) toRem(15);
+    }
+
     // .hero__image
     &__image-ibg {
         @include adaptiveValue("width", 412, 200, 0, $containerWidth, 991.98);
@@ -12,6 +46,9 @@
         overflow: hidden; // приберає білі закруглення
         img {
             object-position: top;
+        }
+        @media (max-width: $tablet) {
+            display: none;
         }
     }
     // .hero__body
@@ -101,36 +138,48 @@
 .advantages-hero {
     display: grid;
     grid-template-columns: repeat(4, auto);
-    @include adaptiveValue("gap", 64, 20);
+    @include adaptiveValue("column-gap", 64, 20);
+    row-gap: toRem(15);
+    @media (max-width: em(1920)) {
+        grid-template-columns: repeat(2, auto);
+    }
+    @media (max-width: $mobileSmall) {
+        grid-template-columns: auto;
+    }
     // .advantages-hero__item
     &__item {
         display: flex;
         align-items: center;
         gap: toRem(16);
         position: relative;
-        &::after {
-            content: "";
-            position: absolute;
-            @include adaptiveValue("right", -32, -20);
-            top: 0;
-            right: 0;
-            height: 100%;
-            width: toRem(1);
-            background: linear-gradient(
-                0deg,
-                rgba(20, 34, 87, 0) 0%,
-                rgba(79, 102, 183, 1) 50%,
-                rgba(20, 34, 87, 0) 100%
-            );
+        @media (min-width: em(1920)) {
+            &:not(:last-child) {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    @include adaptiveValue("right", -32, -20);
+                    top: 0;
+                    right: 0;
+                    height: 100%;
+                    width: toRem(1);
+                    background: linear-gradient(
+                        0deg,
+                        rgba(20, 34, 87, 0) 0%,
+                        rgba(79, 102, 183, 1) 50%,
+                        rgba(20, 34, 87, 0) 100%
+                    );
+                }
+            }
         }
     }
     // .advantages-hero__icon
     &__icon {
-        display: flex;
+        display: inline-flex;
         justify-content: center;
         align-items: center;
         border-radius: 50%;
         flex: 0 0 toRem(48);
+        width: toRem(48);
         height: toRem(48);
         padding: toRem(5);
         background-color: $bgColorSemi;
