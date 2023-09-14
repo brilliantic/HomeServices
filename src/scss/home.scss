@@ -8,34 +8,54 @@
     @media (min-width: $tablet) {
         grid-template-columns: auto 1fr auto;
 
-
         &::before,
         &::after {
-            content: "";
             @include adaptiveValue(
                 "width",
                 470,
-                230,
+                260,
                 0,
                 $containerWidth,
                 991.98
             );
             position: absolute;
             bottom: 0;
-            height: toRem(50);
-            background-color: $bgColorWhite;
-            
+            height: toRem(45);
+            background-repeat: no-repeat;
         }
-        &::before {
+        &::before{
+            content: "";
             left: 0;
-            clip-path: polygon(0% 0%, 90% 0, 100% 100%, 0% 100%); /* Визначення форми обрізання */
+            background-image: url(../img/hero/Decoration-left.svg);
+            background-position: right;
         }
         &::after {
+            content: "";
             right: 0;
-            clip-path: polygon(50px 0, 100% 0, 100% 100%, 0% 100%); /* Визначення форми обрізання */
+            background-image: url(../img/hero/Decoration-right.svg);
         }
+        
+        // &::before,
+        // &::after {
+        //     content: "";
+        //     @include adaptiveValue("width", 470, 260, 0, $containerWidth, 991.98);
+        //     position: absolute;
+        //     bottom: 0;
+        //     height: toRem(50);
+        //     background-color: $bgColorWhite;
+        // }
+
+        // &::before {
+        //     left: 0;
+        //     clip-path: polygon(0% 0, calc(100% - 50px) 0, 100% 100%, 0% 100%); /* Визначення форми обрізання зліва*/
+        // }
+        // &::after {
+        //     content: "";
+        //     right: 0;
+        //     clip-path: polygon(50px 0, 100% 0, 100% 100%, 0% 100%); /* Визначення форми обрізання справа*/
+        // }
     }
-    @media (max-width:$tablet){
+    @media (max-width: $tablet) {
         padding: toRem(80) toRem(15) toRem(30) toRem(15);
     }
 

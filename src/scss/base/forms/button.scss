@@ -44,7 +44,7 @@
         /* Анімація обертання при наведенні */
         &:hover::after {
             transform: rotate(
-                45deg
+                90deg
             );
             animation: shake 0.5s ease; /* Запуск анімації трясіння */
         }
@@ -54,16 +54,16 @@
                 transform: translateX(0);
             }
             25% {
-                transform: translateX(-4px) rotate(45deg);
+                transform: translateX(-4px) rotate(90deg);
             }
             50% {
-                transform: translateX(4px) rotate(45deg);
+                transform: translateX(4px) rotate(90deg);
             }
             75% {
-                transform: translateX(-4px) rotate(45deg);
+                transform: translateX(-4px) rotate(90deg);
             }
             100% {
-                transform: translateX(0) rotate(45deg);
+                transform: translateX(0) rotate(90deg);
             }
         }
     }
