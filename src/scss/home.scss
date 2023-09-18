@@ -23,7 +23,7 @@
             height: toRem(45);
             background-repeat: no-repeat;
         }
-        &::before{
+        &::before {
             content: "";
             left: 0;
             background-image: url(../img/hero/Decoration-left.svg);
@@ -34,7 +34,7 @@
             right: 0;
             background-image: url(../img/hero/Decoration-right.svg);
         }
-        
+
         // &::before,
         // &::after {
         //     content: "";
@@ -160,7 +160,7 @@
     grid-template-columns: repeat(4, auto);
     @include adaptiveValue("column-gap", 64, 20);
     row-gap: toRem(15);
-    @media (max-width: em(1920)) {
+    @media (max-width: em(1919)) {
         grid-template-columns: repeat(2, auto);
     }
     @media (max-width: $mobileSmall) {
@@ -215,5 +215,94 @@
         line-height: 1.3; /* 24/18 */
     }
 }
-
 //====================================================================================================
+.services {
+    @include adaptiveValue("padding-top", 85, 30);
+    @include adaptiveValue("padding-bottom", 64, 30);
+    // .services__container
+    &__container {
+        display: grid;
+        row-gap: toRem(30);
+        grid-template-columns: repeat(2, 1fr);
+        @media (max-width: $tablet) {
+            grid-template-columns: auto;
+        }
+    }
+    // .services__body
+    &__body {
+        @include adaptiveValue(
+            "padding-top",
+            100,
+            30,
+            2,
+            $containerWidth,
+            991.98
+        );
+        @media (min-width: $tablet) {
+            max-width: toRem(580);
+            padding-right: toRem(20);
+        }
+    }
+    // .services__block-header
+    &__block-header {
+        @include adaptiveValue("margin-bottom", 54, 16);
+        .block-header__title {
+            @include adaptiveValue("margin-bottom", 24, 16);
+        }
+    }
+    // .services__items
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @include adaptiveValue("gap", 32, 16);
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 56, 16);
+        }
+        @media (max-width: em(540)){
+            grid-template-columns: auto;
+        }
+    }
+    // .services__item
+    &__item {
+        background: url("@img/icons/check-dark.svg") 0 em(10, 20) no-repeat;
+        padding-left: toRem(28);
+        @include adaptiveValue("font-size", 20, 16);
+        font-weight: 700;
+        color: $bgColorSemi;
+        line-height: 140%; /* 28/20 */
+    }
+    // .services__info
+    &__info {
+        border-radius: toRem(24);
+        background-color: $bgColorSky;
+        color: $bgColorWhite;
+        padding: 12px 32px;
+        line-height: 155.555556%; /* 28/18 */
+        text-align: center;
+        a {
+            white-space: nowrap; //  для нерозривного номеру телефона
+            font-size: toRem(20);
+            font-weight: 600;
+            text-decoration: underline;
+            color: $bgColorWhite;
+        }
+        @media (min-width: $tablet) {
+            max-width: toRem(450);
+        }
+    }
+    // .services__image
+    &__image {
+        text-align: center;
+        img {
+            max-width: 100%;
+        }
+    }
+}
+.block-header {
+    // .block-header__title
+    &__title {
+    }
+    // .block-header__text
+    &__text {
+    }
+}
