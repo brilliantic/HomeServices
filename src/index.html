@@ -5,7 +5,7 @@
         <div class="wrapper">
             @@include('html/_header.htm',{})
             <main class="page">
-                <section class="hero">
+                <section data-watch class="hero">
                     <div class="hero__image-ibg">
                         <img src="@img/hero/image-left.jpg" alt="image" />
                     </div>
@@ -89,7 +89,7 @@
                         <img src="@img/hero/Image-right.jpg" alt="image" />
                     </div>
                 </section>
-                <section class="about">
+                <section data-watch="navigator" data-watch-threshold="0.3" class="about">
                     <div class="about__container">
                         <div class="about__body">
                             <div class="about__block-header block-header">
@@ -128,7 +128,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="services">
+                <section data-watch="navigator" data-watch-threshold="0.3" class="services">
                     <div class="services__container">
                         <div
                             class="services__block-header block-header block-header--center">
@@ -275,7 +275,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="advantages">
+                <section data-watch class="advantages">
                     <div class="advantages__body">
                         <div class="advantages__container">
                             <div

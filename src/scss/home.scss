@@ -217,7 +217,7 @@
 }
 //====================================================================================================
 .about {
-    @include adaptiveValue("margin-top", 85, 20);
+    @include adaptiveValue("margin-top", 123, 40);
     @include adaptiveValue("margin-bottom", 64, 20);
     // .about__container
     &__container {
@@ -245,18 +245,18 @@
     }
     // .about__block-header
     &__block-header {
-        @include adaptiveValue("margin-bottom", 54, 16);
-        .block-header__title {
-            @include adaptiveValue("margin-bottom", 24, 16);
-        }
+        @include adaptiveValue("margin-bottom", 54, 30);
+        // .block-header__title {
+        //     @include adaptiveValue("margin-bottom", 24, 16);
+        // }
     }
     // .about__items
     &__items {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        @include adaptiveValue("gap", 32, 16);
+        @include adaptiveValue("gap", 32, 15);
         &:not(:last-child) {
-            @include adaptiveValue("margin-bottom", 56, 16);
+            @include adaptiveValue("margin-bottom", 56, 30);
         }
         @media (max-width: em(540)) {
             grid-template-columns: auto;
@@ -270,6 +270,24 @@
         font-weight: 700;
         color: $bgColorSemi;
         line-height: 140%; /* 28/20 */
+
+        opacity: 0;
+        transform: translate(0px, -10%);
+        transition:
+            opacity 0.5s,
+            transform 0.5s;
+
+        ._watcher-view & {
+            opacity: 1;
+            transform: translate(0, 0);
+
+            @for $i from 1 through 6 {
+                &:nth-child(#{$i}) {
+                    $delay: $i * 0.2;
+                    transition-delay: #{delay}s;
+                }
+            }
+        }
     }
     // .about__info
     &__info {
@@ -409,7 +427,8 @@
                 height: 73.295455%;
                 max-height: toRem(635);
                 transform: translate(0px, -50%);
-                background: url("@img/advantages/decoration-left.svg") left / auto 100% no-repeat; // bg+
+                background: url("@img/advantages/decoration-left.svg") left /
+                    auto 100% no-repeat; // bg+
             }
             &::before {
                 left: 0;

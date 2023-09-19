@@ -5,8 +5,12 @@
 	<title>HomePage</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230919220753">
+	<style>
+		body {
+			opacity: 0;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style.min.css?_v=20230920000003">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,10 +27,10 @@
 					<button type="button" class="menu__icon icon-menu"><span></span></button>
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="#" class="menu__link">About Us</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Services</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Our Blog</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">Contact </a></li>
+							<li class="menu__item"><a href="#" data-goto=".about" class="menu__link">About Us</a></li>
+							<li class="menu__item"><a href="#" data-goto=".services" class="menu__link">Services</a></li>
+							<li class="menu__item"><a href="#" data-goto=".blog" class="menu__link">Our Blog</a></li>
+							<li class="menu__item"><a href="#" data-goto=".contacts" class="menu__link">Contact </a></li>
 						</ul>
 					</nav>
 				</div>
@@ -34,7 +38,7 @@
 			</div>
 		</header>
 		<main class="page">
-			<section class="hero">
+			<section data-watch class="hero">
 				<div class="hero__image-ibg">
 					<picture><source srcset="img/hero/image-left.webp" type="image/webp"><img src="img/hero/image-left.jpg" alt="image" /></picture>
 				</div>
@@ -106,7 +110,7 @@
 					<picture><source srcset="img/hero/Image-right.webp" type="image/webp"><img src="img/hero/Image-right.jpg" alt="image" /></picture>
 				</div>
 			</section>
-			<section class="about">
+			<section data-watch="navigator" data-watch-threshold="0.3" class="about">
 				<div class="about__container">
 					<div class="about__body">
 						<div class="about__block-header block-header">
@@ -145,7 +149,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="services">
+			<section data-watch="navigator" data-watch-threshold="0.3" class="services">
 				<div class="services__container">
 					<div class="services__block-header block-header block-header--center">
 						<h2 class="block-header__title">Our Services</h2>
@@ -274,7 +278,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="advantages">
+			<section data-watch class="advantages">
 				<div class="advantages__body">
 					<div class="advantages__container">
 						<div class="advantages__block-header block-header block-header--inline">
@@ -415,7 +419,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20230919220753"></script>
+	<script src="js/app.min.js?_v=20230920000003"></script>
 </body>
 
 </html>
