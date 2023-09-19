@@ -217,8 +217,8 @@
 }
 //====================================================================================================
 .about {
-    @include adaptiveValue("padding-top", 85, 30);
-    @include adaptiveValue("padding-bottom", 64, 30);
+    @include adaptiveValue("margin-top", 85, 20);
+    @include adaptiveValue("margin-bottom", 64, 20);
     // .about__container
     &__container {
         display: grid;
@@ -372,14 +372,7 @@
     }
     // .item-services__title
     &__title {
-        margin-bottom: toRem(12);
-        font-size: toRem(24);
-        font-weight: 700;
-        line-height: 133.333333%; /* 32/24 */
         color: $darckColor;
-        &:not(:last-child) {
-            margin-bottom: toRem(12);
-        }
     }
     // .item-services__text
     &__text {
@@ -394,3 +387,101 @@
     }
 }
 //==========================================================================================================================================
+.advantages {
+    @include adaptiveValue("padding-left", 60, 15, 2, $containerWidth, 991.98);
+    @include adaptiveValue("padding-right", 60, 15, 2, $containerWidth, 991.98);
+    // .advantages__body
+    &__body {
+        @include adaptiveValue("padding-top", 64, 40);
+        @include adaptiveValue("padding-bottom", 64, 40);
+        background-color: $bgColor;
+        @media (min-width: $tablet) {
+            position: relative;
+            border-radius: toRem(24);
+            padding-left: toRem(70);
+            padding-right: toRem(70);
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                width: toRem(45);
+                height: 73.295455%;
+                max-height: toRem(635);
+                transform: translate(0px, -50%);
+                background: url("@img/advantages/decoration-left.svg") left / auto 100% no-repeat; // bg+
+            }
+            &::before {
+                left: 0;
+            }
+            &::after {
+                content: "";
+                right: 0;
+                transform: translate(0px, -50%) rotate(180deg);
+            }
+        }
+    }
+    // .advantages__container
+    &__container {
+    }
+    // .advantages__block-header
+    &__block-header {
+        position: relative;
+        @include adaptiveValue("padding-bottom", 120, 30);
+        &::after {
+            content: "";
+            position: absolute;
+            height: toRem(2);
+            width: 100%;
+            background: linear-gradient(
+                90deg,
+                rgba(20, 34, 87, 0) 0%,
+                rgba(79, 102, 183, 1) 50%,
+                rgba(20, 34, 87, 0) 100%
+            );
+            @include adaptiveValue("bottom", 60, 15);
+            left: 0;
+        }
+    }
+    // .advantages__items
+    &__items {
+        display: grid;
+        column-gap: toRem(20);
+        @include adaptiveValue("row-gap", 60, 20);
+        grid-template-columns: repeat(2, auto);
+        justify-content: space-between;
+        @media (max-width: $tablet) {
+            grid-template-columns: auto;
+        }
+    }
+    // .advantages__item
+    &__item {
+        max-width: toRem(630);
+    }
+}
+.item-advantages {
+    display: flex;
+    @include adaptiveValue("gap", 32, 15);
+    // .item-advantages__icon
+    &__icon {
+        flex: 0 0 toRem(100);
+        height: toRem(100);
+        display: flex;
+        justify-content: center; // fbc
+        align-items: center;
+        img {
+            max-width: 100%; // is
+        }
+    }
+    // .item-advantages__body
+    &__body {
+    }
+    // .item-advantages__title
+    &__title {
+        color: $bgColorWhite;
+    }
+    // .item-advantages__text
+    &__text {
+    }
+}
+//sp==========================================================================================================================================
