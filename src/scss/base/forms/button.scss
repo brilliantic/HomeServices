@@ -22,6 +22,12 @@
     &--min {
     }
     &--white {
+        background-color: $bgColorWhite;
+        border-radius: toRem(60);
+        color: $bgColorSky;
+        font-size: toRem(24);
+        font-weight: 700;
+        line-height: 133.333333%; /* 32/24 */
     }
     &--icon {
         display: flex;
@@ -43,9 +49,7 @@
         }
         /* Анімація обертання при наведенні */
         &:hover::after {
-            transform: rotate(
-                90deg
-            );
+            transform: rotate(90deg);
             animation: shake 0.5s ease; /* Запуск анімації трясіння */
         }
         /* Ключові кадри для анімації трясіння */

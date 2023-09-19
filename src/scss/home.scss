@@ -216,10 +216,10 @@
     }
 }
 //====================================================================================================
-.services {
+.about {
     @include adaptiveValue("padding-top", 85, 30);
     @include adaptiveValue("padding-bottom", 64, 30);
-    // .services__container
+    // .about__container
     &__container {
         display: grid;
         row-gap: toRem(30);
@@ -228,7 +228,7 @@
             grid-template-columns: auto;
         }
     }
-    // .services__body
+    // .about__body
     &__body {
         @include adaptiveValue(
             "padding-top",
@@ -243,14 +243,14 @@
             padding-right: toRem(20);
         }
     }
-    // .services__block-header
+    // .about__block-header
     &__block-header {
         @include adaptiveValue("margin-bottom", 54, 16);
         .block-header__title {
             @include adaptiveValue("margin-bottom", 24, 16);
         }
     }
-    // .services__items
+    // .about__items
     &__items {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -258,11 +258,11 @@
         &:not(:last-child) {
             @include adaptiveValue("margin-bottom", 56, 16);
         }
-        @media (max-width: em(540)){
+        @media (max-width: em(540)) {
             grid-template-columns: auto;
         }
     }
-    // .services__item
+    // .about__item
     &__item {
         background: url("@img/icons/check-dark.svg") 0 em(10, 20) no-repeat;
         padding-left: toRem(28);
@@ -271,7 +271,7 @@
         color: $bgColorSemi;
         line-height: 140%; /* 28/20 */
     }
-    // .services__info
+    // .about__info
     &__info {
         border-radius: toRem(24);
         background-color: $bgColorSky;
@@ -290,7 +290,7 @@
             max-width: toRem(450);
         }
     }
-    // .services__image
+    // .about__image
     &__image {
         text-align: center;
         img {
@@ -298,11 +298,99 @@
         }
     }
 }
-.block-header {
-    // .block-header__title
-    &__title {
+//==========================================================================================================================================
+.services {
+    @include adaptiveValue("margin-top", 120, 20);
+    @include adaptiveValue("margin-bottom", 140, 40);
+    // .services__container
+    &__container {
     }
-    // .block-header__text
-    &__text {
+    // .services__block-header
+    &__block-header {
+        max-width: toRem(560);
+        margin: 0 auto;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 60, 30);
+        }
+    }
+    // .services__items
+    &__items {
+        display: grid;
+        grid-template-columns: auto;
+        @media (min-width: em(670)) {
+            grid-template-columns: repeat(auto-fit, minmax(toRem(320), 1fr));
+        }
+        @media (max-width: em(669.98)) {
+            row-gap: toRem(20);
+        }
+    }
+    // .services__item
+    &__item {
+        // &:not(:last-child) {
+        @include adaptiveValue("padding-bottom", 24, 15);
+        // }
     }
 }
+.item-services {
+    border-radius: toRem(24);
+    @media (min-width: em(670)) {
+        @include adaptiveValue("padding", 32, 15);
+    }
+    @media (max-width: em(669.98)) {
+        text-align: center;
+    }
+    &:last-child {
+        color: $bgColorWhite;
+    }
+    // .item-services--blue
+    &--blue {
+        color: $bgColorWhite;
+        text-align: center;
+        background-color: $bgColorSky;
+        @media (max-width: em(669.98)) {
+            padding: toRem(20);
+        }
+        .item-services__title {
+            color: inherit;
+        }
+    }
+    // .item-services__icon
+    &__icon {
+        width: toRem(64);
+        height: toRem(64);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: toRem(20);
+        background-color: $bgColor;
+        img {
+            max-width: 100%;
+        }
+        &:not(:last-child) {
+            margin-bottom: toRem(16);
+        }
+    }
+    // .item-services__title
+    &__title {
+        margin-bottom: toRem(12);
+        font-size: toRem(24);
+        font-weight: 700;
+        line-height: 133.333333%; /* 32/24 */
+        color: $darckColor;
+        &:not(:last-child) {
+            margin-bottom: toRem(12);
+        }
+    }
+    // .item-services__text
+    &__text {
+        font-weight: 400;
+        line-height: 155.555556%; /* 28/18 */
+        &:not(:last-child) {
+            margin-bottom: toRem(32);
+        }
+    }
+    // .item-services__button
+    &__button {
+    }
+}
+//==========================================================================================================================================

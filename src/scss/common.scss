@@ -20,6 +20,9 @@
         @include adaptiveValue("font-size", 52, 32);
         font-weight: 700;
         line-height: 1.23;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 24, 15);
+        }
         // .block-header__title--big
         &--big {
             @include adaptiveValue("font-size", 64, 38);
