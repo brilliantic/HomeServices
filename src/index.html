@@ -89,7 +89,7 @@
                         <img src="@img/hero/Image-right.jpg" alt="image" />
                     </div>
                 </section>
-                <section data-watch="navigator" data-watch-threshold="0.3" class="about">
+                <section data-watch data-watch="navigator" data-watch-threshold="0.3" class="about">
                     <div class="about__container">
                         <div class="about__body">
                             <div class="about__block-header block-header">
@@ -128,7 +128,7 @@
                         </div>
                     </div>
                 </section>
-                <section data-watch="navigator" data-watch-threshold="0.3" class="services">
+                <section data-watch data-watch="navigator" data-watch-threshold="0.3" class="services">
                     <div class="services__container">
                         <div
                             class="services__block-header block-header block-header--center">
@@ -294,7 +294,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <article class="advantages__items">
+                            <div class="advantages__items">
                                 <div class="advantages__item item-advantages">
                                     <div class="item-advantages__icon">
                                         <img
@@ -370,8 +370,8 @@
                                     </div>
                                     <div class="item-advantages__body">
                                         <h4
-                                            class="item-advantages__title title-h4">
-                                            Fast 24-Hour Service
+                                            class="item-advantages__title title-h4" data-watch>
+                                            Fast <span data-digits-counter data-digits-counter-speed="1000">24</span>-Hour Service
                                         </h4>
                                         <div class="item-advantages__text">
                                             <p>
@@ -413,8 +413,8 @@
                                     </div>
                                     <div class="item-advantages__body">
                                         <h4
-                                            class="item-advantages__title title-h4">
-                                            100% Commitment-Free
+                                            class="item-advantages__title title-h4" data-watch>
+                                            <span data-digits-counter data-digits-counter-speed="1200">100</span>% Commitment-Free
                                         </h4>
                                         <div class="item-advantages__text">
                                             <p>
@@ -426,10 +426,17 @@
                                         </div>
                                     </div>
                                 </div>
-                            </article>
+                            </div>
                         </div>
                     </div>
                 </section>
+                <!-- <section class="how">
+                    <div class="how__container">
+                        <div class="how__image">
+                            <img src="@img/how/image.jpg" alt="Image">
+                        </div>
+                    </div>
+                </section> -->
             </main>
             @@include('html/_footer.htm',{})
         </div>

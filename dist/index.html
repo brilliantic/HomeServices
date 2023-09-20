@@ -10,7 +10,7 @@
 			opacity: 0;
 		}
 	</style>
-	<link rel="stylesheet" href="css/style.min.css?_v=20230920000003">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230920213828">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,14 +27,14 @@
 					<button type="button" class="menu__icon icon-menu"><span></span></button>
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="#" data-goto=".about" class="menu__link">About Us</a></li>
-							<li class="menu__item"><a href="#" data-goto=".services" class="menu__link">Services</a></li>
-							<li class="menu__item"><a href="#" data-goto=".blog" class="menu__link">Our Blog</a></li>
-							<li class="menu__item"><a href="#" data-goto=".contacts" class="menu__link">Contact </a></li>
+							<li class="menu__item"><a href="#" data-goto-header data-goto-speed="700" data-goto-top="-50" data-goto=".about" class="menu__link">About Us</a></li>
+							<li class="menu__item"><a href="#" data-goto-header data-goto-speed="700" data-goto-top="30" data-goto=".services" class="menu__link">Services</a></li>
+							<li class="menu__item"><a href="#" data-goto-header data-goto-speed="700" data-goto-top="30" data-goto=".blog" class="menu__link">Our Blog</a></li>
+							<li class="menu__item"><a href="#" data-goto-header data-goto-speed="700" data-goto-top="30" data-goto=".contacts" class="menu__link">Contact </a></li>
 						</ul>
 					</nav>
 				</div>
-				<div data-da=".menu__body, 767.98" class="header__schedule">24 Hour Services</div>
+				<div data-da=".menu__body, 767.98" class="header__schedule" data-watch><span data-digits-counter data-digits-counter-speed="1000">24</span> Hour Services</div>
 			</div>
 		</header>
 		<main class="page">
@@ -110,7 +110,7 @@
 					<picture><source srcset="img/hero/Image-right.webp" type="image/webp"><img src="img/hero/Image-right.jpg" alt="image" /></picture>
 				</div>
 			</section>
-			<section data-watch="navigator" data-watch-threshold="0.3" class="about">
+			<section data-watch data-watch="navigator" data-watch-threshold="0.3" class="about">
 				<div class="about__container">
 					<div class="about__body">
 						<div class="about__block-header block-header">
@@ -149,7 +149,7 @@
 					</div>
 				</div>
 			</section>
-			<section data-watch="navigator" data-watch-threshold="0.3" class="services">
+			<section data-watch data-watch="navigator" data-watch-threshold="0.3" class="services">
 				<div class="services__container">
 					<div class="services__block-header block-header block-header--center">
 						<h2 class="block-header__title">Our Services</h2>
@@ -295,7 +295,7 @@
 								</p>
 							</div>
 						</div>
-						<article class="advantages__items">
+						<div class="advantages__items">
 							<div class="advantages__item item-advantages">
 								<div class="item-advantages__icon">
 									<img src="img/advantages/advantages-01.svg" alt="Satisfaction Guarantee" />
@@ -359,8 +359,8 @@
 									<img src="img/advantages/advantages-04.svg" alt="Fast 24-Hour Service" />
 								</div>
 								<div class="item-advantages__body">
-									<h4 class="item-advantages__title title-h4">
-										Fast 24-Hour Service
+									<h4 class="item-advantages__title title-h4" data-watch>
+										Fast <span data-digits-counter data-digits-counter-speed="1000">24</span>-Hour Service
 									</h4>
 									<div class="item-advantages__text">
 										<p>
@@ -396,8 +396,8 @@
 									<img src="img/advantages/advantages-06.svg" alt="100% Commitment-Free" />
 								</div>
 								<div class="item-advantages__body">
-									<h4 class="item-advantages__title title-h4">
-										100% Commitment-Free
+									<h4 class="item-advantages__title title-h4" data-watch>
+										<span data-digits-counter data-digits-counter-speed="1200">100</span>% Commitment-Free
 									</h4>
 									<div class="item-advantages__text">
 										<p>
@@ -409,17 +409,24 @@
 									</div>
 								</div>
 							</div>
-						</article>
+						</div>
 					</div>
 				</div>
 			</section>
+			<!-- <section class="how">
+                    <div class="how__container">
+                        <div class="how__image">
+                            <picture><source srcset="img/how/image.webp" type="image/webp"><img src="img/how/image.jpg" alt="Image"></picture>
+                        </div>
+                    </div>
+                </section> -->
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20230920000003"></script>
+	<script src="js/app.min.js?_v=20230920213828"></script>
 </body>
 
 </html>

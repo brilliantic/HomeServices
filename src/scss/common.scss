@@ -53,7 +53,7 @@
         transition:
             transform 0.5s 0.3s,
             opacity 0.5s 0.3s;
-                    ._watcher-view & {
+        ._watcher-view & {
             transform: translate(0, 0);
             opacity: 1;
         }
@@ -96,5 +96,47 @@
     line-height: 133.333333%; /* 32/24 */
     &:not(:last-child) {
         margin-bottom: toRem(12);
+    }
+}
+
+%animate-item {
+    opacity: 0;
+    transform: translate(0px, 15%);
+    transition:
+        opacity 0.5s,
+        transform 0.5s;
+
+    ._watcher-view & {
+        opacity: 1;
+        transform: translate(0, 0);
+
+        @for $i from 1 through 6 {
+            &:nth-child(#{$i}) {
+                $startDelay: 0.5;
+                $delay: $i * 0.15 + $startDelay;
+                transition-delay: #{$delay}s;
+            }
+        }
+    }
+}
+
+%animate-item-8 {
+    opacity: 0;
+    transform: translate(0px, 15%);
+    transition:
+        opacity 0.5s,
+        transform 0.5s;
+
+    ._watcher-view & {
+        opacity: 1;
+        transform: translate(0, 0);
+
+        @for $i from 1 through 8 {
+            &:nth-child(#{$i}) {
+                $startDelay: 0.5;
+                $delay: $i * 0.15 + $startDelay;
+                transition-delay: #{$delay}s;
+            }
+        }
     }
 }
