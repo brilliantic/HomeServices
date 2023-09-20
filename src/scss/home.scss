@@ -11,7 +11,7 @@
         &::before,
         &::after {
             @include adaptiveValue(
-                "width",
+                'width',
                 470,
                 260,
                 0,
@@ -24,36 +24,16 @@
             background-repeat: no-repeat;
         }
         &::before {
-            content: "";
+            content: '';
             left: 0;
             background-image: url(../img/hero/Decoration-left.svg);
             background-position: right;
         }
         &::after {
-            content: "";
+            content: '';
             right: 0;
             background-image: url(../img/hero/Decoration-right.svg);
         }
-
-        // &::before,
-        // &::after {
-        //     content: "";
-        //     @include adaptiveValue("width", 470, 260, 0, $containerWidth, 991.98);
-        //     position: absolute;
-        //     bottom: 0;
-        //     height: toRem(50);
-        //     background-color: $bgColorWhite;
-        // }
-
-        // &::before {
-        //     left: 0;
-        //     clip-path: polygon(0% 0, calc(100% - 50px) 0, 100% 100%, 0% 100%); /* Визначення форми обрізання зліва*/
-        // }
-        // &::after {
-        //     content: "";
-        //     right: 0;
-        //     clip-path: polygon(50px 0, 100% 0, 100% 100%, 0% 100%); /* Визначення форми обрізання справа*/
-        // }
     }
     @media (max-width: $tablet) {
         padding: toRem(80) toRem(15) toRem(30) toRem(15);
@@ -61,7 +41,8 @@
 
     // .hero__image
     &__image-ibg {
-        @include adaptiveValue("width", 412, 200, 0, $containerWidth, 991.98);
+        position: relative;
+        @include adaptiveValue('width', 412, 200, 0, $containerWidth, 991.98);
         border-radius: toRem(24);
         overflow: hidden; // приберає білі закруглення
         img {
@@ -70,6 +51,29 @@
         @media (max-width: $tablet) {
             display: none;
         }
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(
+                -35deg,
+                #131f4b 4.15%,
+                rgba(19, 31, 75, 0) 43.25%
+            );
+        }
+        &--right {
+            &::after {
+                content: '';
+                background-image: linear-gradient(
+                    35deg,
+                    #131f4b 4.15%,
+                    rgba(19, 31, 75, 0) 43.25%
+                );
+            }
+        }
     }
     // .hero__body
     &__body {
@@ -77,7 +81,7 @@
         flex-direction: column;
         row-gap: toRem(50);
         @include adaptiveValue(
-            "padding-left",
+            'padding-left',
             83,
             15,
             0,
@@ -85,7 +89,7 @@
             991.98
         ); // Відступи беспеки
         @include adaptiveValue(
-            "padding-right",
+            'padding-right',
             83,
             15,
             0,
@@ -143,7 +147,7 @@
         position: relative;
         &:not(:last-child) {
             &::after {
-                content: "";
+                content: '';
                 position: absolute;
                 right: toRem(-30);
                 top: calc(50% - toRem(2));
@@ -158,7 +162,7 @@
 .advantages-hero {
     display: grid;
     grid-template-columns: repeat(4, auto);
-    @include adaptiveValue("column-gap", 64, 20);
+    @include adaptiveValue('column-gap', 64, 20);
     row-gap: toRem(15);
     @media (max-width: em(1919)) {
         grid-template-columns: repeat(2, auto);
@@ -175,9 +179,9 @@
         @media (min-width: em(1920)) {
             &:not(:last-child) {
                 &::after {
-                    content: "";
+                    content: '';
                     position: absolute;
-                    @include adaptiveValue("right", -32, -20);
+                    @include adaptiveValue('right', -32, -20);
                     top: 0;
                     right: 0;
                     height: 100%;
@@ -214,12 +218,11 @@
         font-weight: 600;
         line-height: 1.3; /* 24/18 */
     }
-
 }
 //====================================================================================================
 .about {
-    @include adaptiveValue("margin-top", 123, 40);
-    @include adaptiveValue("margin-bottom", 64, 20);
+    @include adaptiveValue('margin-top', 123, 40);
+    @include adaptiveValue('margin-bottom', 64, 20);
     // .about__container
     &__container {
         display: grid;
@@ -232,7 +235,7 @@
     // .about__body
     &__body {
         @include adaptiveValue(
-            "padding-top",
+            'padding-top',
             100,
             30,
             2,
@@ -246,7 +249,7 @@
     }
     // .about__block-header
     &__block-header {
-        @include adaptiveValue("margin-bottom", 54, 30);
+        @include adaptiveValue('margin-bottom', 54, 30);
         // .block-header__title {
         //     @include adaptiveValue("margin-bottom", 24, 16);
         // }
@@ -255,9 +258,9 @@
     &__items {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        @include adaptiveValue("gap", 32, 15);
+        @include adaptiveValue('gap', 32, 15);
         &:not(:last-child) {
-            @include adaptiveValue("margin-bottom", 56, 30);
+            @include adaptiveValue('margin-bottom', 56, 30);
         }
         @media (max-width: em(540)) {
             grid-template-columns: auto;
@@ -265,9 +268,9 @@
     }
     // .about__item
     &__item {
-        background: url("@img/icons/check-dark.svg") 0 em(10, 20) no-repeat;
+        background: url('@img/icons/check-dark.svg') 0 em(10, 20) no-repeat;
         padding-left: toRem(28);
-        @include adaptiveValue("font-size", 20, 16);
+        @include adaptiveValue('font-size', 20, 16);
         font-weight: 700;
         color: $bgColorSemi;
         line-height: 140%; /* 28/20 */
@@ -303,8 +306,8 @@
 }
 //==========================================================================================================================================
 .services {
-    @include adaptiveValue("margin-top", 120, 20);
-    @include adaptiveValue("margin-bottom", 140, 40);
+    @include adaptiveValue('margin-top', 120, 20);
+    @include adaptiveValue('margin-bottom', 140, 40);
     // .services__container
     &__container {
     }
@@ -313,7 +316,7 @@
         max-width: toRem(560);
         margin: 0 auto;
         &:not(:last-child) {
-            @include adaptiveValue("margin-bottom", 60, 30);
+            @include adaptiveValue('margin-bottom', 60, 30);
         }
     }
     // .services__items
@@ -329,7 +332,7 @@
     }
     // .services__item
     &__item {
-        @include adaptiveValue("padding-bottom", 24, 15);
+        @include adaptiveValue('padding-bottom', 24, 15);
 
         @extend %animate-item-8; // Animations
     }
@@ -337,7 +340,7 @@
 .item-services {
     border-radius: toRem(24);
     @media (min-width: em(670)) {
-        @include adaptiveValue("padding", 32, 15);
+        @include adaptiveValue('padding', 32, 15);
     }
     @media (max-width: em(669.98)) {
         text-align: center;
@@ -391,12 +394,12 @@
 }
 //==========================================================================================================================================
 .advantages {
-    @include adaptiveValue("padding-left", 60, 15, 2, $containerWidth, 991.98);
-    @include adaptiveValue("padding-right", 60, 15, 2, $containerWidth, 991.98);
+    @include adaptiveValue('padding-left', 60, 15, 2, $containerWidth, 991.98);
+    @include adaptiveValue('padding-right', 60, 15, 2, $containerWidth, 991.98);
     // .advantages__body
     &__body {
-        @include adaptiveValue("padding-top", 64, 40);
-        @include adaptiveValue("padding-bottom", 64, 40);
+        @include adaptiveValue('padding-top', 64, 40);
+        @include adaptiveValue('padding-bottom', 64, 40);
         background-color: $bgColor;
         @media (min-width: $tablet) {
             position: relative;
@@ -405,21 +408,21 @@
             padding-right: toRem(70);
             &::before,
             &::after {
-                content: "";
+                content: '';
                 position: absolute;
                 top: 50%;
                 width: toRem(45);
                 height: 73.295455%;
                 max-height: toRem(635);
                 transform: translate(0px, -50%);
-                background: url("@img/advantages/decoration-left.svg") left /
+                background: url('@img/advantages/decoration-left.svg') left /
                     auto 100% no-repeat; // bg+
             }
             &::before {
                 left: 0;
             }
             &::after {
-                content: "";
+                content: '';
                 right: 0;
                 transform: translate(0px, -50%) rotate(180deg);
             }
@@ -431,9 +434,9 @@
     // .advantages__block-header
     &__block-header {
         position: relative;
-        @include adaptiveValue("padding-bottom", 120, 30);
+        @include adaptiveValue('padding-bottom', 120, 30);
         &::after {
-            content: "";
+            content: '';
             position: absolute;
             height: toRem(2);
             width: 100%;
@@ -443,7 +446,7 @@
                 rgba(79, 102, 183, 1) 50%,
                 rgba(20, 34, 87, 0) 100%
             );
-            @include adaptiveValue("bottom", 60, 15);
+            @include adaptiveValue('bottom', 60, 15);
             left: 0;
         }
     }
@@ -451,7 +454,7 @@
     &__items {
         display: grid;
         column-gap: toRem(20);
-        @include adaptiveValue("row-gap", 60, 20);
+        @include adaptiveValue('row-gap', 60, 20);
         grid-template-columns: repeat(2, auto);
         justify-content: space-between;
         @media (max-width: $tablet) {
@@ -465,7 +468,7 @@
 }
 .item-advantages {
     display: flex;
-    @include adaptiveValue("gap", 32, 15);
+    @include adaptiveValue('gap', 32, 15);
     // .item-advantages__icon
     &__icon {
         flex: 0 0 toRem(100);
@@ -489,3 +492,79 @@
     }
 }
 //sp==========================================================================================================================================
+.how {
+    @include adaptiveValue('padding-top', 155, 30);
+    @include adaptiveValue('padding-bottom', 155, 30);
+    // .how__container
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        @media (max-width: $tablet) {
+            grid-template-columns: auto;
+            gap: toRem(30);
+        }
+    }
+    // .how__image
+    &__image {
+        img {
+            transform: translate(-10.599721%, 0); /* 76/717 */
+            max-width: 100%;
+        }
+        @media (max-width: $tablet) {
+            order: 2;
+            text-align: center;
+            img {
+                transform: translate(0px, 0px);
+            }
+        }
+    }
+    // .how__content
+    &__content {
+        @media (max-width: $tablet) {
+            order: 1;
+            display: grid;
+            place-items: center;
+        }
+    }
+    // .how__block-header
+    &__block-header {
+        max-width: toRem(400);
+        @include adaptiveValue('margin-bottom', 60, 30);
+        @media (max-width: $tablet) {
+            max-width: 100%;
+        }
+    }
+    // .how__list
+    &__list {
+    }
+}
+.list-how {
+    display: grid;
+    @include adaptiveValue('gap', 52, 10);
+    @extend %listCounter;
+    // .list-how__item
+    &__item {
+        @include adaptiveValue('padding-left', 70, 40);
+        display: grid;
+        grid-template-columns: toRem(170) auto;
+        gap: toRem(35);
+        &::before {
+            @include adaptiveValue('font-size', 52, 30);
+            font-weight: 700;
+            color: $greyColor;
+        }
+        @media (max-width: em(520)) {
+            gap: toRem(5);
+            grid-template-columns: auto;
+        }
+    }
+    // .list-how__title
+    &__title {
+        color: $darckColor;
+    }
+    // .list-how__text
+    &__text {
+        max-width: toRem(420);
+    }
+}
+//==========================================================================================================================================

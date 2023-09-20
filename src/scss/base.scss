@@ -67,7 +67,7 @@
 		position: relative;
 		&:before {
 			counter-increment: item;
-			content: counter(item);
+			content: counter(item) ".";
 			position: absolute;
 			left: 0;
 			top: 0;

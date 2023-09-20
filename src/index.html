@@ -6,7 +6,7 @@
             @@include('html/_header.htm',{})
             <main class="page">
                 <section data-watch class="hero">
-                    <div class="hero__image-ibg">
+                    <div class="hero__image-ibg hero__image-ibg--left">
                         <img src="@img/hero/image-left.jpg" alt="image" />
                     </div>
                     <div class="hero__body">
@@ -85,11 +85,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hero__image-ibg">
+                    <div class="hero__image-ibg hero__image-ibg--right">
                         <img src="@img/hero/Image-right.jpg" alt="image" />
                     </div>
                 </section>
-                <section data-watch data-watch="navigator" data-watch-threshold="0.3" class="about">
+                <section
+                    data-watch
+                    data-watch="navigator"
+                    data-watch-threshold="0.3"
+                    class="about">
                     <div class="about__container">
                         <div class="about__body">
                             <div class="about__block-header block-header">
@@ -128,7 +132,11 @@
                         </div>
                     </div>
                 </section>
-                <section data-watch data-watch="navigator" data-watch-threshold="0.3" class="services">
+                <section
+                    data-watch
+                    data-watch="navigator"
+                    data-watch-threshold="0.3"
+                    class="services">
                     <div class="services__container">
                         <div
                             class="services__block-header block-header block-header--center">
@@ -370,8 +378,15 @@
                                     </div>
                                     <div class="item-advantages__body">
                                         <h4
-                                            class="item-advantages__title title-h4" data-watch>
-                                            Fast <span data-digits-counter data-digits-counter-speed="1000">24</span>-Hour Service
+                                            class="item-advantages__title title-h4"
+                                            data-watch>
+                                            Fast
+                                            <span
+                                                data-digits-counter
+                                                data-digits-counter-speed="1000">
+                                                24
+                                            </span>
+                                            -Hour Service
                                         </h4>
                                         <div class="item-advantages__text">
                                             <p>
@@ -413,8 +428,14 @@
                                     </div>
                                     <div class="item-advantages__body">
                                         <h4
-                                            class="item-advantages__title title-h4" data-watch>
-                                            <span data-digits-counter data-digits-counter-speed="1200">100</span>% Commitment-Free
+                                            class="item-advantages__title title-h4"
+                                            data-watch>
+                                            <span
+                                                data-digits-counter
+                                                data-digits-counter-speed="1200">
+                                                100
+                                            </span>
+                                            % Commitment-Free
                                         </h4>
                                         <div class="item-advantages__text">
                                             <p>
@@ -430,13 +451,62 @@
                         </div>
                     </div>
                 </section>
-                <!-- <section class="how">
+                <section data-watch class="how">
                     <div class="how__container">
                         <div class="how__image">
-                            <img src="@img/how/image.jpg" alt="Image">
+                            <img src="@img/how/image.jpg" alt="Image" />
+                        </div>
+                        <div class="how__content">
+                            <div class="how__block-header block-header">
+                                <h2 class="block-header__title">
+                                    How HomePro works?
+                                </h2>
+                            </div>
+                            <ol class="how__list list-how">
+                                <li class="list-how__item">
+                                    <div class="list-how__title title-h4">
+                                        Call us anytime 24/7
+                                    </div>
+                                    <div class="list-how__text text">
+                                        <p>
+                                            You can contact us directly, we will
+                                            quickly put you in touch with our
+                                            home care professionals who are
+                                            ready anytime
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="list-how__item">
+                                    <div class="list-how__title title-h4">
+                                        Schedule Service
+                                    </div>
+                                    <div class="list-how__text text">
+                                        <p>
+                                            After connecting your call, our home
+                                            care experts will answer your
+                                            questions and provide flexible
+                                            appointment times
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="list-how__item">
+                                    <div class="list-how__title title-h4">
+                                        Your request is complated
+                                    </div>
+                                    <div class="list-how__text text">
+                                        <p>
+                                            Once your technician arrives, he
+                                            will diagnose the problem and
+                                            provide an estimate. If you decide
+                                            to continue, the technician will get
+                                            to work
+                                        </p>
+                                    </div>
+                                </li>
+                            </ol>
                         </div>
                     </div>
-                </section> -->
+                </section>
             </main>
             @@include('html/_footer.htm',{})
         </div>

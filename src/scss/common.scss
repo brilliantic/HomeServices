@@ -2,7 +2,7 @@
 
 .block-header {
     display: grid;
-    @include adaptiveValue("gap", 24, 15);
+    @include adaptiveValue('gap', 24, 15);
     // .block-header__center
     &--center {
         text-align: center;
@@ -21,15 +21,15 @@
         display: grid;
         gap: toRem(24);
         color: $darckColor;
-        @include adaptiveValue("font-size", 52, 32);
+        @include adaptiveValue('font-size', 52, 32);
         font-weight: 700;
         line-height: 1.23;
         &:not(:last-child) {
-            @include adaptiveValue("margin-bottom", 24, 15);
+            @include adaptiveValue('margin-bottom', 24, 15);
         }
         // .block-header__title--big
         &--big {
-            @include adaptiveValue("font-size", 64, 38);
+            @include adaptiveValue('font-size', 64, 38);
         }
         // .block-header__title--white
         &--white {
@@ -82,21 +82,24 @@
     &__item {
         color: $bgColorSky;
         padding-left: toRem(32);
-        @include adaptiveValue("font-size", 20, 18);
+        @include adaptiveValue('font-size', 20, 18);
         line-height: 1.3;
-        background: url("@img/icons/check-blue.svg") left toRem(1) no-repeat;
+        background: url('@img/icons/check-blue.svg') left toRem(1) no-repeat;
     }
 }
 
 // .item-services__title
 .title-h4 {
     margin-bottom: toRem(12);
-    font-size: toRem(24);
+    @include adaptiveValue('font-size', 24, 18);
     font-weight: 700;
     line-height: 133.333333%; /* 32/24 */
     &:not(:last-child) {
         margin-bottom: toRem(12);
     }
+}
+.text {
+    line-height: 155.555556%; /* 28/18 */
 }
 
 %animate-item {
@@ -124,8 +127,8 @@
     opacity: 0;
     transform: translate(0px, 15%);
     transition:
-        opacity 0.5s,
-        transform 0.5s;
+        opacity 0.3s,
+        transform 0.3s;
 
     ._watcher-view & {
         opacity: 1;
@@ -133,7 +136,7 @@
 
         @for $i from 1 through 8 {
             &:nth-child(#{$i}) {
-                $startDelay: 0.5;
+                $startDelay: 0.3;
                 $delay: $i * 0.15 + $startDelay;
                 transition-delay: #{$delay}s;
             }
