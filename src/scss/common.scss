@@ -143,3 +143,23 @@
         }
     }
 }
+%animate-item-3 {
+    opacity: 0;
+    transform: translate(0px, 15%);
+    transition:
+        opacity 0.3s,
+        transform 0.3s;
+
+    ._watcher-view & {
+        opacity: 1;
+        transform: translate(0, 0);
+
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+                $startDelay: 0.3;
+                $delay: $i * 0.15 + $startDelay;
+                transition-delay: #{$delay}s;
+            }
+        }
+    }
+}

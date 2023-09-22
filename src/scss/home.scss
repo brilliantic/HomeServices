@@ -557,6 +557,7 @@
             gap: toRem(5);
             grid-template-columns: auto;
         }
+        @extend %animate-item-3;
     }
     // .list-how__title
     &__title {
