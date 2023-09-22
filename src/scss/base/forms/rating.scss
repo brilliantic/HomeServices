@@ -3,7 +3,7 @@
 .rating {
 	display: flex;
 	align-items: flex-end;
-	font-size: 40px;
+	font-size: toRem(36);
 	line-height: 0.75;
 	transition: opacity 0.3s ease 0s;
 }

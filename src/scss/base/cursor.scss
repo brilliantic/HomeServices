@@ -12,8 +12,9 @@
 		will-change: transform;
 		transition: all 0.05s linear 0s;
 		position: fixed;
-		width: toRem(50);
-		height: toRem(50);
+		width: toRem(30);
+		height: toRem(30);
+		border-radius: 50%;
 		&::after {
 			content: "";
 			position: absolute;
@@ -37,8 +38,8 @@
 		position: fixed;
 		width: toRem(3);
 		height: toRem(3);
-		top: 0;
-		left: 0;
+		top: 12px;
+		left: 12px;
 		&::after {
 			content: "";
 			position: absolute;

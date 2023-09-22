@@ -100,66 +100,40 @@
 }
 .text {
     line-height: 155.555556%; /* 28/18 */
+    &:not(:last-child) {
+        p {
+            margin-bottom: toRem(15);
+        }
+    }
+}
+
+@mixin animate-item($itemCount, $duration, $startDelay) {
+    opacity: 0;
+    transform: translate(0px, 15%);
+    transition:
+        opacity #{$duration}s,
+        transform #{$duration}s;
+
+    ._watcher-view & {
+        opacity: 1;
+        transform: translate(0, 0);
+
+        @for $i from 1 through $itemCount {
+            &:nth-child(#{$i}) {
+                $delay: $i * 0.15 + $startDelay;
+                transition-delay: #{$delay}s;
+            }
+        }
+    }
 }
 
 %animate-item {
-    opacity: 0;
-    transform: translate(0px, 15%);
-    transition:
-        opacity 0.5s,
-        transform 0.5s;
-
-    ._watcher-view & {
-        opacity: 1;
-        transform: translate(0, 0);
-
-        @for $i from 1 through 6 {
-            &:nth-child(#{$i}) {
-                $startDelay: 0.5;
-                $delay: $i * 0.15 + $startDelay;
-                transition-delay: #{$delay}s;
-            }
-        }
-    }
-}
-
-%animate-item-8 {
-    opacity: 0;
-    transform: translate(0px, 15%);
-    transition:
-        opacity 0.3s,
-        transform 0.3s;
-
-    ._watcher-view & {
-        opacity: 1;
-        transform: translate(0, 0);
-
-        @for $i from 1 through 8 {
-            &:nth-child(#{$i}) {
-                $startDelay: 0.3;
-                $delay: $i * 0.15 + $startDelay;
-                transition-delay: #{$delay}s;
-            }
-        }
-    }
+    @include animate-item(6, 0.5, 0.5);
 }
 %animate-item-3 {
-    opacity: 0;
-    transform: translate(0px, 15%);
-    transition:
-        opacity 0.3s,
-        transform 0.3s;
-
-    ._watcher-view & {
-        opacity: 1;
-        transform: translate(0, 0);
-
-        @for $i from 1 through 3 {
-            &:nth-child(#{$i}) {
-                $startDelay: 0.3;
-                $delay: $i * 0.15 + $startDelay;
-                transition-delay: #{$delay}s;
-            }
-        }
-    }
+    @include animate-item(3, 0.3, 0.3);
 }
+%animate-item-8 {
+    @include animate-item(8, 0.3, 0.3);
+}
+
