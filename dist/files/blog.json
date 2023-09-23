@@ -1,0 +1,100 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "image": "img/blog/image-01.jpg",
+      "date": "19 Jan 2023",
+      "title": "Understanding Smart Home Systems & Maintenance",
+      "link": "https://brilliantic.github.io/My_Portfolio/project",
+      "text": "Discover the ultimate guide to troubleshooting common smart home issues in our latest blog post...",
+      "tags": {
+        "Plumbing": "https://brilliantic.github.io/My_Portfolio/project",
+        "Maintenance": "https://brilliantic.github.io/My_Portfolio/project"
+      }
+    },
+    {
+      "id": "2",
+      "image": "img/blog/image-02.jpg",
+      "date": "20 Jan 2023",
+      "title": "The Ultimate Guide to Home Repairs and Renovations",
+      "link": "https://brilliantic.github.io/My_Portfolio/project",
+      "text": "Learn about sustainable architecture and its impact on the environment in our latest blog post...",
+      "tags": {
+        "Plumbing": "https://brilliantic.github.io/My_Portfolio/project",
+        "Architecture": "https://brilliantic.github.io/My_Portfolio/project"
+      }
+    },
+    {
+      "id": "3",
+      "image": "img/blog/image-03.jpg",
+      "date": "21 Jan 2023",
+      "title": "Painting Techniques for a Kitchen Refresh",
+      "link": "https://brilliantic.github.io/My_Portfolio/project",
+      "text": "Keep your plumbing in top condition with these essential maintenance tips...",
+      "tags": {
+        "Architecture": "https://brilliantic.github.io/My_Portfolio/project"
+      }
+    },
+    {
+      "id": "4",
+      "image": "img/blog/image-03.jpg",
+      "date": "22 Jan 2023",
+      "title": "Smart Home Security: Protecting Your Home",
+      "link": "https://brilliantic.github.io/My_Portfolio/project",
+      "text": "Ensure the security of your smart home with our comprehensive guide...",
+      "tags": {
+        "Plumbing": "https://brilliantic.github.io/My_Portfolio/project",
+        "Architecture": "https://brilliantic.github.io/My_Portfolio/project",
+        "Maintenance": "https://brilliantic.github.io/My_Portfolio/project"
+      }
+    },
+    {
+      "id": "5",
+      "image": "img/blog/image-01.jpg",
+      "date": "23 Jan 2023",
+      "title": "Interior Design Trends for 2023",
+      "link": "https://brilliantic.github.io/My_Portfolio/project",
+      "text": "Stay up-to-date with the latest interior design trends for the year 2023...",
+      "tags": {
+        "Plumbing": "https://brilliantic.github.io/My_Portfolio/project",
+        "Maintenance": "https://brilliantic.github.io/My_Portfolio/project"
+      }
+    },
+    {
+      "id": "6",
+      "image": "img/blog/image-03.jpg",
+      "date": "24 Jan 2023",
+      "title": "Home Maintenance Checklist",
+      "link": "https://brilliantic.github.io/My_Portfolio/project",
+      "text": "Make sure your home is well-maintained with our comprehensive checklist...",
+      "tags": {
+        "Plumbing": "https://brilliantic.github.io/My_Portfolio/project"
+      }
+    },
+    {
+      "id": "7",
+      "image": "img/blog/image-01.jpg",
+      "date": "22 Jan 2023",
+      "title": "Smart Home Security: Protecting Your Home",
+      "link": "https://brilliantic.github.io/My_Portfolio/project",
+      "text": "Ensure the security of your smart home with our comprehensive guide...",
+      "tags": {
+        "Plumbing": "https://brilliantic.github.io/My_Portfolio/project",
+        "Architecture": "https://brilliantic.github.io/My_Portfolio/project",
+        "Maintenance": "https://brilliantic.github.io/My_Portfolio/project"
+      }
+    },
+    {
+      "id": "8",
+      "image": "img/blog/image-03.jpg",
+      "date": "23 Jan 2023",
+      "title": "Interior Design Trends for 2023",
+      "link": "https://brilliantic.github.io/My_Portfolio/project",
+      "text": "Stay up-to-date with the latest interior design trends for the year 2023...",
+      "tags": {
+        "Plumbing": "https://brilliantic.github.io/My_Portfolio/project",
+        "Maintenance": "https://brilliantic.github.io/My_Portfolio/project"
+      }
+    }
+  ]
+}
