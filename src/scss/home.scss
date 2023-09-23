@@ -322,6 +322,16 @@
 
     @extend %animate-item-8; // Animations
   }
+  .block-header__title,
+  .block-header__text,
+  .services__item {
+    // animations off
+    @media (max-width: $tablet) {
+      opacity: 1;
+      transform: translate(0, 0);
+      transition-delay: 0s;
+    }
+  }
 }
 .item-services {
   border-radius: toRem(24);
@@ -673,7 +683,19 @@
     &:not(:last-child) {
       @include adaptiveValue('margin-bottom', 40, 15);
     }
-    @extend %text-animate;
+
+    // Анімація для тексту
+    transform: translate(0, 15%);
+    opacity: 0;
+    transition:
+      transform 0.5s,
+      opacity 0.5s;
+
+    ._watcher-view & {
+      transform: translate(0, 0);
+      opacity: 1;
+      transition-delay: 0.5s; // Затримка для тексту
+    }
   }
   // .slide-reviews__user
   &__user {
@@ -740,11 +762,12 @@
   }
   // .blog__view-more
   &__view-more {
+    display: none;
     justify-self: center;
     color: $bgColorSky;
     padding-right: em(30, 24);
     background: url('@img/icons/more.svg') right no-repeat;
-        @media (any-hover: hover) {
+    @media (any-hover: hover) {
       &:hover {
         text-decoration: underline;
       }

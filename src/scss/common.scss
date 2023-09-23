@@ -16,44 +16,69 @@
       grid-template-columns: auto;
     }
   }
-  // .block-header__title
-  &__title {
-    display: grid;
-    gap: toRem(24);
-    color: $darckColor;
-    @include adaptiveValue('font-size', 52, 32);
-    font-weight: 700;
-    line-height: 1.23;
-    &:not(:last-child) {
-      @include adaptiveValue('margin-bottom', 24, 15);
-    }
-    // .block-header__title--big
-    &--big {
-      @include adaptiveValue('font-size', 64, 38);
-    }
-    // .block-header__title--white
-    &--white {
-      color: $bgColorWhite;
-    }
-    @extend %title-animate;
-  }
-  // .block-header__text
-  &__text {
-    @extend %text-animate;
-    p {
-      line-height: 1.55;
-    }
+  // Анімація для заголовків
+.title-animate {
+  transform: translate(0, 15%);
+  opacity: 0;
+  transition: transform 0.6s, opacity 0.6s;
+
+  ._watcher-view & {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition-delay: 0s;
   }
 }
 
-/*
-<div class="block-header">
-	<h2 class="block-header__title">Professional for your home services</h2>
-	<div class="block-header__text">
-		<p>You need help for home care? We are home care professionals focused in the US region. We provide several services that support home services</p>
-	</div>
-</div> 
-*/
+// Анімація для тексту
+.text-animate {
+  transform: translate(0, 15%);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+
+  ._watcher-view & {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition-delay: 0.5s; // Затримка для тексту
+  }
+}
+
+// .block-header__title
+&__title {
+  display: grid;
+  gap: toRem(24);
+  color: $darckColor;
+  @include adaptiveValue('font-size', 52, 32);
+  font-weight: 700;
+  line-height: 1.23;
+
+  &:not(:last-child) {
+    @include adaptiveValue('margin-bottom', 24, 15);
+  }
+
+  // .block-header__title--big
+  &--big {
+    @include adaptiveValue('font-size', 64, 38);
+  }
+
+  // .block-header__title--white
+  &--white {
+    color: $bgColorWhite;
+  }
+
+  // Включення анімації для заголовків
+  @extend .title-animate;
+}
+// .block-header__text
+&__text {
+  // Включення анімації для тексту
+  @extend .text-animate;
+
+  p {
+    line-height: 1.55;
+  }
+}
+
+}
 //==========================================================================================================================================
 
 .done {
@@ -91,18 +116,18 @@
 }
 
 // Міксін для анімації заголовків та тексту
-@mixin animate($translateX, $duration, $delay) {
-  transform: translate(0, 15%);
-  opacity: 0;
-  transition:
-    transform #{$duration}s,
-    opacity #{$duration}s;
-  ._watcher-view & {
-    transform: translate(0, 0);
-    opacity: 1;
-    transition-delay: #{$delay}s;
-  }
-}
+// @mixin animate($translateX, $duration, $delay) {
+//   transform: translate(0, 15%);
+//   opacity: 0;
+//   transition:
+//     transform #{$duration}s,
+//     opacity #{$duration}s;
+//   ._watcher-view & {
+//     transform: translate(0, 0);
+//     opacity: 1;
+//     transition-delay: #{$delay}s;
+//   }
+// }
 
 // Міксін для анімації списку елементів
 @mixin animate-item($itemCount, $duration, $startDelay) {
@@ -126,21 +151,20 @@
 }
 
 // Використовуємо міксін для анімації заголовків та тексту
-%title-animate {
-  @include animate(0, 0.5, 0s);
-}
-%text-animate {
-  @include animate(0, 0.5, 0.3s);
-}
+// %title-animate {
+//   @include animate(0, 0.5, 0s);
+// }
+// %text-animate {
+//   @include animate(0, 0.5, 0.5s);
+// }
 
 // Використовуємо міксіни для анімації списку елементів
 %animate-item-3 {
   @include animate-item(3, 0.3, 0.3);
 }
 %animate-item-6 {
-  @include animate-item(6, 0.5, 0.5);
+  @include animate-item(6, 0.8, 0.8);
 }
 %animate-item-8 {
-  @include animate-item(8, 0.3, 0.3);
+  @include animate-item(8, 0.8, 0.8);
 }
-

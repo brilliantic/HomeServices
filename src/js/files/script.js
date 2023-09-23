@@ -3,159 +3,101 @@ import { isMobile } from './functions.js';
 // Підключення списку активних модулів
 import { flsModules } from './modules.js';
 
-const blog = document.querySelector('.blog');
-const showMoreButton = document.querySelector('.blog__view-more'); // Кнопка "Показати ще"
-let itemsToShow = 3; // Початкова кількість товарів для показу
+const addBlogCart = function () {
+  const blog = document.querySelector('.blog');
+  const showMoreButton = document.querySelector('.blog__view-more');
+  let itemsToShow = 3;
 
-if (blog) {
-  loadBlogItems();
-  showMoreButton.addEventListener('click', showMoreItems);
-}
-
-async function loadBlogItems() {
-  const response = await fetch('files/blog.json', {
-    method: 'GET'
-  });
-  if (response.ok) {
-    const responseResult = await response.json();
-    initBlog(responseResult);
-  } else {
-    alert('Error!');
+  if (blog) {
+    loadBlogItems();
+    showMoreButton.addEventListener('click', showMoreItems);
   }
-}
 
-function initBlog(data) {
-  const blogItems = document.querySelector('.blog__items'); // Контейнер для товарів
-  blogItems.innerHTML = ''; // Очистити контейнер перед виведенням нових товарів
-
-  for (let index = 0; index < itemsToShow; index++) {
-    if (index < data.items.length) {
-      const item = data.items[index];
-      buildBlogItem(item, blogItems);
+  async function loadBlogItems() {
+    try {
+      const response = await fetch('files/blog.json');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      initBlog(data);
+    } catch (error) {
+      alert('Error: ' + error.message);
     }
   }
 
-  // Перевірка, чи потрібно приховати кнопку "Показати ще"
-  if (itemsToShow >= data.items.length) {
-    showMoreButton.style.display = 'none'; // Приховати кнопку
-  } else {
-    showMoreButton.style.display = 'block'; // Показати кнопку
+  function initBlog(data) {
+    const blogItems = document.querySelector('.blog__items');
+    blogItems.innerHTML = '';
+
+    data.items.slice(0, itemsToShow).forEach((item) => {
+      buildBlogItem(item, blogItems);
+    });
+
+    // Затримка перед появою кнопки "View More" на 1 секунду
+    setTimeout(() => {
+      showMoreButton.style.display =
+        itemsToShow < data.items.length ? 'block' : 'none';
+    }, 3000);
+
+    showMoreButton.addEventListener('click', () => {
+      showMoreButton.style.display = 'none'; // Після кліка ховаю кнопку
+
+      // Використовую setTimeout для затримки відновлення видимості кнопки
+      setTimeout(() => {
+        loadBlogItems();
+        showMoreButton.style.display =
+          itemsToShow < data.items.length ? 'block' : 'none';
+      }, 3000);
+    });
   }
-}
 
-function buildBlogItem(item, blogItems) {
-  let blogItemTemplate = `<article data-id="${item.id}" class="blog__item item-blog">`;
-
-  if (item.image) {
-    blogItemTemplate += `
+  function buildBlogItem(item, blogItems) {
+    const blogItemTemplate = `<article data-id="${
+      item.id
+    }" class="blog__item item-blog">
+    ${
+      item.image
+        ? `
       <a href="${item.link}" target="_blank" class="item-blog__image-ibg">
         <img src="${item.image}" alt="image">
-      </a>`;
-  }
-
-  blogItemTemplate += `<div class="item-blog__date"">${item.date}</div>`;
-
-  blogItemTemplate += `
+      </a>`
+        : ''
+    }
+    <div class="item-blog__date">${item.date}</div>
     <h4 class="item-blog__title">
-      <a href="${item.link}" target="_blank" class="item-blog__link-title">${item.title}</a>
-    </h4>`;
-
-  if (item.text) {
-    blogItemTemplate += `
+      <a href="${item.link}" target="_blank" class="item-blog__link-title">${
+        item.title
+      }</a>
+    </h4>
+    ${
+      item.text
+        ? `
       <div class="item-blog__text text">
         <p>${item.text}</p>
-      </div>`;
-  }
-
-  if (item.tags) {
-    blogItemTemplate += `<div class="item-blog__tags">`;
-    for (const tag in item.tags) {
-      blogItemTemplate += `<a href="${item.tags[tag]}" target="_blank" class="item-blog__tag">${tag}</a>`;
+      </div>`
+        : ''
     }
-    blogItemTemplate += `</div>`;
+    ${
+      item.tags
+        ? `<div class="item-blog__tags">
+      ${Object.entries(item.tags)
+        .map(
+          ([tag, url]) =>
+            `<a href="${url}" target="_blank" class="item-blog__tag">${tag}</a>`
+        )
+        .join('')}
+    </div>`
+        : ''
+    }
+  </article>`;
+
+    blogItems.insertAdjacentHTML('beforeend', blogItemTemplate);
   }
 
-  blogItemTemplate += `</article>`;
-  blogItems.insertAdjacentHTML('beforeend', blogItemTemplate);
-}
-
-
-function showMoreItems() {
-  itemsToShow += 3; // Додавання 3 товарів при кожному кліку
-  loadBlogItems(); // Оновити вміст блогу
-}
-
-
-// const blog = document.querySelector('.blog');
-// if (blog) {
-//   // Check if .blog element exists
-//   loadBlogItems();
-// }
-
-// async function loadBlogItems() {
-//   const response = await fetch('files/blog.json', {
-//     method: 'GET'
-//   });
-//   if (response.ok) {
-//     const responseResult = await response.json();
-//     initBlog(responseResult);
-//   } else {
-//     alert('Error!');
-//   }
-// }
-
-// function initBlog(data) {
-//   const blogItems = document.querySelector('.blog__items'); // Select the container for blog items
-
-//   for (let index = 0; index < 3; index++) {
-//     const item = data.items[index];
-//     buildBlogItem(item, blogItems);
-//   }
-// }
-
-// function buildBlogItem(item, blogItems) {
-//   let blogItemTemplate = `<article data-id="${item.id}" class="blog__item item-blog">`;
-
-//   if (item.image) {
-//     blogItemTemplate += `
-//       <a href="${item.link}" target="_blank" class="item-blog__image-ibg">
-//         <img src="${item.image}" alt="image">
-//       </a>`;
-//   }
-
-//   blogItemTemplate += `<div class="item-blog__date"">${item.date}</div>`;
-
-//   blogItemTemplate += `
-//     <h4 class="item-blog__title">
-//       <a href="${item.link}" target="_blank" class="item-blog__link-title">${item.title}</a>
-//     </h4>`;
-
-//   if (item.text) {
-//     blogItemTemplate += `
-//       <div class="item-blog__text text">
-//         <p>${item.text}</p>
-//       </div>`;
-//   }
-
-//   if (item.tags) {
-//     blogItemTemplate += `<div class="item-blog__tags">`;
-//     for (const tag in item.tags) {
-//       blogItemTemplate += `<a href="${item.tags[tag]}" target="_blank" class="item-blog__tag">${tag}</a>`;
-//     }
-//     blogItemTemplate += `</div>`;
-//   }
-
-//   blogItemTemplate += `</article>`;
-//   blogItems.insertAdjacentHTML('beforeend', blogItemTemplate);
-// }
-
-
-// document.addEventListener('click', documentActions);
-
-// function documentActions(e) {
-//   const targetElement = e.target;
-
-//   if (targetElement.closest('.blog__view-more')) {
-//     e.reventDefault();
-//   }
-// }
+  function showMoreItems() {
+    itemsToShow += 3;
+    loadBlogItems();
+  }
+};
+addBlogCart();

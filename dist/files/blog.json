@@ -2,7 +2,7 @@
   "items": [
     {
       "id": "1",
-      "image": "img/blog/image-07.jpg",
+      "image": "img/blog/image-01.jpg",
       "date": "19 Jan 2023",
       "title": "Understanding Smart Home Systems & Maintenance",
       "link": "https://brilliantic.github.io/My_Portfolio/project",
@@ -14,8 +14,8 @@
     },
     {
       "id": "2",
-      "image": "img/blog/image-08.jpg",
-      "date": "20 Jan 2023",
+      "image": "img/blog/image-02.jpg",
+      "date": "28 Feb 2023",
       "title": "The Ultimate Guide to Home Repairs and Renovations",
       "link": "https://brilliantic.github.io/My_Portfolio/project",
       "text": "Learn about sustainable architecture and its impact on the environment in our latest blog post...",
@@ -27,7 +27,7 @@
     {
       "id": "3",
       "image": "img/blog/image-03.jpg",
-      "date": "21 Jan 2023",
+      "date": "10 Apr 2023",
       "title": "Painting Techniques for a Kitchen Refresh",
       "link": "https://brilliantic.github.io/My_Portfolio/project",
       "text": "Keep your plumbing in top condition with these essential maintenance tips...",
@@ -38,7 +38,7 @@
     {
       "id": "4",
       "image": "img/blog/image-04.jpg",
-      "date": "22 Jan 2023",
+      "date": "13 Jun 2023",
       "title": "Smart Home Security: Protecting Your Home",
       "link": "https://brilliantic.github.io/My_Portfolio/project",
       "text": "Ensure the security of your smart home with our comprehensive guide...",
@@ -51,49 +51,50 @@
     {
       "id": "5",
       "image": "img/blog/image-05.jpg",
-      "date": "23 Jan 2023",
+      "date": "5 Aug 2023",
       "title": "Interior Design Trends for 2023",
       "link": "https://brilliantic.github.io/My_Portfolio/project",
       "text": "Stay up-to-date with the latest interior design trends for the year 2023...",
       "tags": {
-        "Plumbing": "https://brilliantic.github.io/My_Portfolio/project",
-        "Maintenance": "https://brilliantic.github.io/My_Portfolio/project"
+        "PaintingServices": "https://brilliantic.github.io/My_Portfolio/project",
+        "PaintingContractor": "https://brilliantic.github.io/My_Portfolio/project"
       }
     },
     {
       "id": "6",
       "image": "img/blog/image-06.jpg",
-      "date": "24 Jan 2023",
+      "date": "22 Oct 2023",
       "title": "Home Maintenance Checklist",
       "link": "https://brilliantic.github.io/My_Portfolio/project",
       "text": "Make sure your home is well-maintained with our comprehensive checklist...",
       "tags": {
-        "Plumbing": "https://brilliantic.github.io/My_Portfolio/project"
+        "DrainageSystem": "https://brilliantic.github.io/My_Portfolio/project",
+        "FaucetRepair": "https://brilliantic.github.io/My_Portfolio/project"
       }
     },
     {
       "id": "7",
-      "image": "img/blog/image-01.jpg",
-      "date": "22 Jan 2023",
+      "image": "img/blog/image-07.jpg",
+      "date": "29 Dec 2023",
       "title": "Smart Home Security: Protecting Your Home",
       "link": "https://brilliantic.github.io/My_Portfolio/project",
       "text": "Ensure the security of your smart home with our comprehensive guide...",
       "tags": {
-        "Plumbing": "https://brilliantic.github.io/My_Portfolio/project",
-        "Architecture": "https://brilliantic.github.io/My_Portfolio/project",
-        "Maintenance": "https://brilliantic.github.io/My_Portfolio/project"
+        "PlumbingRepair": "https://brilliantic.github.io/My_Portfolio/project",
+        "WaterSupply": "https://brilliantic.github.io/My_Portfolio/project",
+        "PipeRepair": "https://brilliantic.github.io/My_Portfolio/project"
       }
     },
     {
       "id": "8",
-      "image": "img/blog/image-02.jpg",
-      "date": "23 Jan 2023",
+      "image": "img/blog/image-08.jpg",
+      "date": "23 Jul 2023",
       "title": "Interior Design Trends for 2023",
       "link": "https://brilliantic.github.io/My_Portfolio/project",
       "text": "Stay up-to-date with the latest interior design trends for the year 2023...",
       "tags": {
-        "Plumbing": "https://brilliantic.github.io/My_Portfolio/project",
-        "Maintenance": "https://brilliantic.github.io/My_Portfolio/project"
+        "TileInstallation": "https://brilliantic.github.io/My_Portfolio/project",
+        "BathroomTiles": "https://brilliantic.github.io/My_Portfolio/project"
       }
     }
   ]
