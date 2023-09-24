@@ -1,5 +1,30 @@
 // Заголовки, загальні БЕМ блоки та інше...
 
+  // Анімація для заголовків @extend 
+.title-animate {
+  transform: translate(0, 15%);
+  opacity: 0;
+  transition: transform 0.6s, opacity 0.6s;
+
+  ._watcher-view & {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition-delay: 0s;
+  }
+}
+// Анімація для тексту @extend 
+.text-animate {
+  transform: translate(0, 15%);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+
+  ._watcher-view & {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition-delay: 0.5s; // Затримка для тексту
+  }
+}
+
 .block-header {
   display: grid;
   @include adaptiveValue('gap', 24, 15);
@@ -16,32 +41,6 @@
       grid-template-columns: auto;
     }
   }
-  // Анімація для заголовків
-.title-animate {
-  transform: translate(0, 15%);
-  opacity: 0;
-  transition: transform 0.6s, opacity 0.6s;
-
-  ._watcher-view & {
-    transform: translate(0, 0);
-    opacity: 1;
-    transition-delay: 0s;
-  }
-}
-
-// Анімація для тексту
-.text-animate {
-  transform: translate(0, 15%);
-  opacity: 0;
-  transition: transform 0.5s, opacity 0.5s;
-
-  ._watcher-view & {
-    transform: translate(0, 0);
-    opacity: 1;
-    transition-delay: 0.5s; // Затримка для тексту
-  }
-}
-
 // .block-header__title
 &__title {
   display: grid;
@@ -75,6 +74,16 @@
 
   p {
     line-height: 1.55;
+  }
+  a {
+    font-weight: 700;
+    color: $bgColorSky;
+    text-decoration: underline;
+    @media (any-hover: hover){
+      &:hover{
+        text-decoration: none;
+      }
+    }
   }
 }
 
@@ -132,7 +141,7 @@
 // Міксін для анімації списку елементів
 @mixin animate-item($itemCount, $duration, $startDelay) {
   opacity: 0;
-  transform: translate(0px, 15%);
+  transform: translate(0px, -15%);
   transition:
     opacity #{$duration}s,
     transform #{$duration}s;

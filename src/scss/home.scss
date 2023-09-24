@@ -711,7 +711,7 @@
     img {
       max-width: 100%;
       height: 100%;
-    border-radius: 50%;
+      border-radius: 50%;
     }
   }
   // .slide-reviews__body
@@ -851,6 +851,94 @@
         background-color: $bgColorSky;
       }
     }
+  }
+}
+//==========================================================================================================================================
+.questions {
+  @include adaptiveValue('padding-top', 190, 40);
+  @include adaptiveValue('padding-bottom', 230, 40);
+  // .questions__container
+  &__container {
+    display: grid;
+    align-items: start;
+    grid-template-columns: auto 57.847222%;
+    column-gap: toRem(20);
+    row-gap: toRem(30);
+    @media (max-width: $tablet) {
+      grid-template-columns: auto;
+    }
+  }
+  // .questions__block-header
+  &__block-header {
+  }
+  
+  // .questions__spollers
+  &__spollers {
+  }
+}
+.spollers-questions {
+  display: grid;
+  gap: toRem(12);
+  // .spollers-questions__item
+  &__item {
+    border-radius: toRem(12);
+    padding: toRem(24) toRem(32);
+    transition: background-color 0.5s;
+    &[open] {
+      background-color: #f3f5f9;
+    }
+    @media (max-width:$mobileSmall){
+        padding: toRem(15) toRem(10);
+    }
+  }
+
+  // .spollers-questions__title
+  &__title {
+    padding-right: toRem(30);
+    line-height: 120%;
+    transition: all 0.5s;
+    list-style: none;
+    @include adaptiveValue('font-size', 24, 18);
+    font-weight: 700;
+    &::marker {
+      display: none;
+    }
+    // пташка на спойлері
+    ._spoller-init & {
+      position: relative;
+      cursor: pointer;
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        background-color: #000;
+        height: toRem(2);
+        width: toRem(15);
+        transition: transform 0.5s ease 0s;
+      }
+      &::before {
+        transform: translate(-75%, -50%) rotate(44deg);
+      }
+      &::after {
+        transform: translate(0, -50%) rotate(-44deg);
+      }
+      &._spoller-active {
+        &::before {
+          transform: translateX(-75%) rotate(-44deg);
+        }
+        &::after {
+          transform: rotate(44deg);
+        }
+      }
+    }
+  }
+  // .spollers-questions__body
+  &__body {
+    padding-top: toRem(16);
+    font-size: toRem(16);
+    line-height: 150%; /* 24/16 */
   }
 }
 //==========================================================================================================================================
