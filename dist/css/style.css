@@ -1480,6 +1480,7 @@ h6 {
 
 .talk__content {
   position: relative;
+  z-index: 1;
 }
 
 .talk__content::before {
