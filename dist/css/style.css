@@ -159,9 +159,6 @@ h6 {
 }
 
 .button--icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1474,6 +1471,31 @@ h6 {
   /* 24/16 */
 }
 
+.talk {
+  position: relative;
+  background-color: #142257;
+  display: -ms-grid;
+  display: grid;
+}
+
+.talk__content {
+  position: relative;
+}
+
+.talk__content::before {
+  content: "";
+  background: url("../img/talk/decor.svg") 0 0/83% no-repeat;
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 581/44;
+  top: 0;
+  left: 0;
+}
+
+.talk__image img {
+  max-width: 100%;
+}
+
 .swiper {
   overflow: hidden;
 }
@@ -1604,12 +1626,47 @@ h6 {
         -ms-transform: translate(0px, -50%) rotate(180deg);
             transform: translate(0px, -50%) rotate(180deg);
   }
+
+  .talk__container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .talk__image {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .talk__image img {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    -ms-grid-column-align: end;
+        justify-self: end;
+    max-width: 100%;
+  }
 }
 
 @media (min-width: 61.99875em) and (min-width: 91.25em) {
   .hero::before,
   .hero::after {
     width: 29.375rem;
+  }
+
+  .talk__container {
+    gap: 6.25rem;
+  }
+
+  .talk__image {
+    gap: 6.25rem;
   }
 }
 
@@ -1821,6 +1878,22 @@ h6 {
   .spollers-questions__title {
     font-size: 1.5rem;
   }
+
+  .talk__content {
+    padding-top: 10.3125rem;
+  }
+
+  .talk__content {
+    padding-bottom: 6.625rem;
+  }
+
+  .talk__block-header:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  .talk__done {
+    margin-bottom: 2.25rem;
+  }
 }
 
 @media (min-width: 120em) {
@@ -2019,6 +2092,22 @@ h6 {
 
   .spollers-questions__title {
     font-size: 1.125rem;
+  }
+
+  .talk__content {
+    padding-top: 2.5rem;
+  }
+
+  .talk__content {
+    padding-bottom: 2.5rem;
+  }
+
+  .talk__block-header:not(:last-child) {
+    margin-bottom: 1.125rem;
+  }
+
+  .talk__done {
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -2834,6 +2923,54 @@ h6 {
       font-size: calc(1.125rem + 0.375 * (100vw - 20rem) / 71.25);
     }
 }
+
+@supports (padding-top: clamp( 2.5rem , 0.3070175439rem  +  10.9649122807vw , 10.3125rem )) {
+    .talk__content {
+      padding-top: clamp( 2.5rem , 0.3070175439rem  +  10.9649122807vw , 10.3125rem );
+    }
+}
+
+@supports not (padding-top: clamp( 2.5rem , 0.3070175439rem  +  10.9649122807vw , 10.3125rem )) {
+    .talk__content {
+      padding-top: calc(2.5rem + 7.8125 * (100vw - 20rem) / 71.25);
+    }
+}
+
+@supports (padding-bottom: clamp( 2.5rem , 1.3421052632rem  +  5.7894736842vw , 6.625rem )) {
+    .talk__content {
+      padding-bottom: clamp( 2.5rem , 1.3421052632rem  +  5.7894736842vw , 6.625rem );
+    }
+}
+
+@supports not (padding-bottom: clamp( 2.5rem , 1.3421052632rem  +  5.7894736842vw , 6.625rem )) {
+    .talk__content {
+      padding-bottom: calc(2.5rem + 4.125 * (100vw - 20rem) / 71.25);
+    }
+}
+
+@supports (margin-bottom: clamp( 1.125rem , 1.0197368421rem  +  0.5263157895vw , 1.5rem )) {
+    .talk__block-header:not(:last-child) {
+      margin-bottom: clamp( 1.125rem , 1.0197368421rem  +  0.5263157895vw , 1.5rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 1.125rem , 1.0197368421rem  +  0.5263157895vw , 1.5rem )) {
+    .talk__block-header:not(:last-child) {
+      margin-bottom: calc(1.125rem + 0.375 * (100vw - 20rem) / 71.25);
+    }
+}
+
+@supports (margin-bottom: clamp( 1.5rem , 1.2894736842rem  +  1.0526315789vw , 2.25rem )) {
+    .talk__done {
+      margin-bottom: clamp( 1.5rem , 1.2894736842rem  +  1.0526315789vw , 2.25rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 1.5rem , 1.2894736842rem  +  1.0526315789vw , 2.25rem )) {
+    .talk__done {
+      margin-bottom: calc(1.5rem + 0.75 * (100vw - 20rem) / 71.25);
+    }
+}
 }
 
 @media (min-width: 47.99875em) and (max-width: 91.25em) {
@@ -2988,6 +3125,42 @@ h6 {
 @media (min-width: 41.875em) and (max-width: 20em) {
   .item-services {
     padding: 0.9375rem;
+  }
+}
+
+@media (min-width: 61.99875em) and (min-width: 20em) and (max-width: 91.25em) {
+@supports (gap: clamp( 1.875rem , 0.6469298246rem  +  6.1403508772vw , 6.25rem )) {
+    .talk__container {
+      gap: clamp( 1.875rem , 0.6469298246rem  +  6.1403508772vw , 6.25rem );
+    }
+}
+
+@supports not (gap: clamp( 1.875rem , 0.6469298246rem  +  6.1403508772vw , 6.25rem )) {
+    .talk__container {
+      gap: calc(1.875rem + 4.375 * (100vw - 20rem) / 71.25);
+    }
+}
+
+@supports (gap: clamp( 1.875rem , 0.6469298246rem  +  6.1403508772vw , 6.25rem )) {
+    .talk__image {
+      gap: clamp( 1.875rem , 0.6469298246rem  +  6.1403508772vw , 6.25rem );
+    }
+}
+
+@supports not (gap: clamp( 1.875rem , 0.6469298246rem  +  6.1403508772vw , 6.25rem )) {
+    .talk__image {
+      gap: calc(1.875rem + 4.375 * (100vw - 20rem) / 71.25);
+    }
+}
+}
+
+@media (min-width: 61.99875em) and (max-width: 20em) {
+  .talk__container {
+    gap: 1.875rem;
+  }
+
+  .talk__image {
+    gap: 1.875rem;
   }
 }
 

@@ -109,9 +109,6 @@
   // .hero__block-header
   &__block-header {
     max-width: toRem(670);
-    // .block-header__title
-    .block-header__title {
-    }
   }
   // .hero__items
   &__items {
@@ -871,7 +868,7 @@
   // .questions__block-header
   &__block-header {
   }
-  
+
   // .questions__spollers
   &__spollers {
   }
@@ -887,8 +884,8 @@
     &[open] {
       background-color: #f3f5f9;
     }
-    @media (max-width:$mobileSmall){
-        padding: toRem(15) toRem(10);
+    @media (max-width: $mobileSmall) {
+      padding: toRem(15) toRem(10);
     }
   }
 
@@ -942,3 +939,65 @@
   }
 }
 //==========================================================================================================================================
+.talk {
+  position: relative;
+  background-color: $bgColor;
+  display: grid;
+  // .talk__container
+  &__container {
+    @media (min-width:$tablet){
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include adaptiveValue('gap', 100, 30);
+        
+    }
+  }
+  // .talk__content
+  &__content {
+    position: relative;
+    @include adaptiveValue('padding-top', 165, 40);
+    @include adaptiveValue('padding-bottom', 106, 40);
+    &::before {
+      content: '';
+      background: url('@img/talk/decor.svg') 0 0 / 83% no-repeat;
+      position: absolute;
+      width: 100%;
+      aspect-ratio: 581 / 44;
+      top: 0;
+      left: 0;
+    }
+  }
+  // .talk__block-header
+  &__block-header {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 24, 18);
+    }
+  }
+  // .talk__done
+  &__done {
+    @include adaptiveValue("margin-bottom", 36, 24);
+  }
+  // .talk__button
+  &__button {
+  }
+  // .talk__image
+  &__image {
+    img {
+      max-width: 100%;
+    }
+    @media (min-width: $tablet) {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      right: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include adaptiveValue('gap', 100, 30);
+      img {
+        grid-column: 2 / 3;
+        justify-self: end;
+        max-width: 100%;
+      }
+    }
+  }
+}
