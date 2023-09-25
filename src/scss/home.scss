@@ -944,11 +944,10 @@
   background-color: $bgColor;
   // .talk__container
   &__container {
-    @media (min-width:$tablet){
+    @media (min-width: $tablet) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       @include adaptiveValue('gap', 100, 30);
-        
     }
   }
   // .talk__content
@@ -970,56 +969,73 @@
   // .talk__block-header
   &__block-header {
     &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 24, 18);
+      @include adaptiveValue('margin-bottom', 24, 18);
     }
   }
   // .talk__done
   &__done {
-    @include adaptiveValue("margin-bottom", 36, 24);
+    @include adaptiveValue('margin-bottom', 36, 24);
+    @media (max-width: $mobile) {
+      justify-content: center;
+    }
+    @media (max-width: $mobileSmall) {
+      justify-content: start;
+    }
+  }
+  // .talk__link
+  &__link {
+    @media (max-width: $mobile) {
+      display: flex;
+      justify-content: center;
+    }
   }
   // .talk__button
   &__button {
   }
   // .talk__image
+  //   &__image {
+  //   position: relative;
+  //   img {
+  //     // max-width: 100%;
+  //     // height: auto;
+  //     // display: block;
+  //     @media (min-width: $tablet) {
+  //       position: absolute;
+  //       width: 100%;
+  //       bottom: 0;
+  //       right: 0;
+  //       display: grid;
+  //       grid-template-columns: repeat(2, 1fr);
+  //       @include adaptiveValue("gap", 100, 30);
+  //       img {
+  //         grid-column: 2 / 3;
+  //         justify-self: end;
+  //       }
+  //     }
+  //   }
+  // }
   &__image {
-  @include adaptiveValue('padding-top', 60, 30); // Змініть значення за потребою
-  position: relative;
-  img {
-    max-width: 100%;
-    height: auto; // Додайте це, щоб зберегти пропорції зображення
-    display: block; // Додайте це, щоб вирівняти зображення по вертикалі
-  }
-  @media (min-width: $tablet) {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    right: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    @include adaptiveValue("gap", 100, 30);
+    position: relative;
+
     img {
-      grid-column: 2 / 3;
-      justify-self: end;
+      max-width: 100%;
+    }
+    @media (min-width: $tablet) {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      right: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include adaptiveValue('gap', 100, 30);
+      img {
+        grid-column: 2 / 3;
+        justify-self: end;
+      }
+    }
+    @media (max-width: $tablet) {
+      left: 5%;
     }
   }
-}
-  // &__image {
-	// 	img {
-	// 		max-width: 100%;
-	// 	}
-	// 	@media (min-width: $tablet) {
-	// 		position: absolute;
-	// 		width: 100%;
-	// 		bottom: 0;
-	// 		right: 0;
-	// 		display: grid;
-	// 		grid-template-columns: repeat(2, 1fr);
-	// 		@include adaptiveValue("gap", 100, 30);
-	// 		img {
-	// 			grid-column: 2 / 3;
-	// 			justify-self: end;
-	// 		}
-	// 	}
-	// }
 }
 //==========================================================================================================================================
