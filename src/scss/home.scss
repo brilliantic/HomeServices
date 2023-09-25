@@ -942,7 +942,6 @@
 .talk {
   position: relative;
   background-color: $bgColor;
-  display: grid;
   // .talk__container
   &__container {
     @media (min-width:$tablet){
@@ -955,6 +954,7 @@
   // .talk__content
   &__content {
     position: relative;
+    z-index: 1;
     @include adaptiveValue('padding-top', 165, 40);
     @include adaptiveValue('padding-bottom', 106, 40);
     &::before {
@@ -966,7 +966,6 @@
       top: 0;
       left: 0;
     }
-    z-index: 1;
   }
   // .talk__block-header
   &__block-header {
@@ -997,7 +996,6 @@
       img {
         grid-column: 2 / 3;
         justify-self: end;
-        max-width: 100%;
       }
     }
   }
