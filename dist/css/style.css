@@ -1788,8 +1788,14 @@ textarea.input {
   left: 0;
 }
 
+.talk__image {
+  position: relative;
+}
+
 .talk__image img {
   max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .swiper {
@@ -2209,6 +2215,10 @@ textarea.input {
   .talk__done {
     margin-bottom: 2.25rem;
   }
+
+  .talk__image {
+    padding-top: 3.75rem;
+  }
 }
 
 @media (min-width: 120em) {
@@ -2443,6 +2453,10 @@ textarea.input {
 
   .talk__done {
     margin-bottom: 1.5rem;
+  }
+
+  .talk__image {
+    padding-top: 1.875rem;
   }
 }
 
@@ -3396,6 +3410,18 @@ textarea.input {
 @supports not (margin-bottom: clamp( 1.5rem , 1.2894736842rem  +  1.0526315789vw , 2.25rem )) {
     .talk__done {
       margin-bottom: calc(1.5rem + 0.75 * (100vw - 20rem) / 71.25);
+    }
+}
+
+@supports (padding-top: clamp( 1.875rem , 1.3486842105rem  +  2.6315789474vw , 3.75rem )) {
+    .talk__image {
+      padding-top: clamp( 1.875rem , 1.3486842105rem  +  2.6315789474vw , 3.75rem );
+    }
+}
+
+@supports not (padding-top: clamp( 1.875rem , 1.3486842105rem  +  2.6315789474vw , 3.75rem )) {
+    .talk__image {
+      padding-top: calc(1.875rem + 1.875 * (100vw - 20rem) / 71.25);
     }
 }
 }
