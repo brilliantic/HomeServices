@@ -53,12 +53,10 @@
   &:not(:last-child) {
     @include adaptiveValue('margin-bottom', 24, 15);
   }
-
   // .block-header__title--big
   &--big {
     @include adaptiveValue('font-size', 64, 38);
   }
-
   // .block-header__title--white
   &--white {
     color: $bgColorWhite;
@@ -86,10 +84,8 @@
     }
   }
 }
-
 }
 //==========================================================================================================================================
-
 .done {
   display: flex;
   flex-wrap: wrap;
@@ -124,20 +120,6 @@
   }
 }
 
-// Міксін для анімації заголовків та тексту
-// @mixin animate($translateX, $duration, $delay) {
-//   transform: translate(0, 15%);
-//   opacity: 0;
-//   transition:
-//     transform #{$duration}s,
-//     opacity #{$duration}s;
-//   ._watcher-view & {
-//     transform: translate(0, 0);
-//     opacity: 1;
-//     transition-delay: #{$delay}s;
-//   }
-// }
-
 // Міксін для анімації списку елементів
 @mixin animate-item($itemCount, $duration, $startDelay) {
   opacity: 0;
@@ -158,15 +140,6 @@
     }
   }
 }
-
-// Використовуємо міксін для анімації заголовків та тексту
-// %title-animate {
-//   @include animate(0, 0.5, 0s);
-// }
-// %text-animate {
-//   @include animate(0, 0.5, 0.5s);
-// }
-
 // Використовуємо міксіни для анімації списку елементів
 %animate-item-3 {
   @include animate-item(3, 0.3, 0.3);

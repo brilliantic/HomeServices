@@ -982,22 +982,22 @@
   }
   // .talk__image
   &__image {
-    img {
-      max-width: 100%;
-    }
-    @media (min-width: $tablet) {
-      position: absolute;
-      width: 100%;
-      bottom: 0;
-      right: 0;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      @include adaptiveValue('gap', 100, 30);
-      img {
-        grid-column: 2 / 3;
-        justify-self: end;
-      }
-    }
-  }
+		img {
+			max-width: 100%;
+		}
+		@media (min-width: $tablet) {
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			right: 0;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			@include adaptiveValue("gap", 100, 30);
+			img {
+				grid-column: 2 / 3;
+				justify-self: end;
+			}
+		}
+	}
 }
 //==========================================================================================================================================
