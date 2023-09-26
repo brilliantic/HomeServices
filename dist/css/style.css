@@ -1769,18 +1769,39 @@ textarea.input {
 }
 
 .talk {
+  overflow: hidden;
   position: relative;
   background-color: #142257;
 }
 
-.talk__content {
+.talk__container {
   position: relative;
-  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.talk__content::before {
+.talk__content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
+.no-webp .talk__body::before{
+  background: url("../img/talk/decor.png"); }
+
+.talk__body::before {
   content: "";
-  background: url("../img/talk/decor.svg") 0 0/83% no-repeat;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 44%;
   position: absolute;
   width: 100%;
   aspect-ratio: 581/44;
@@ -1792,8 +1813,8 @@ textarea.input {
   position: relative;
 }
 
-.talk__image img {
-  max-width: 100%;
+.talk__local-img {
+  display: none;
 }
 
 .swiper {
@@ -1927,30 +1948,28 @@ textarea.input {
             transform: translate(0px, -50%) rotate(180deg);
   }
 
-  .talk__container {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[2];
-    grid-template-columns: repeat(2, 1fr);
+  .talk {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
+
+  .talk__body {
+    width: 50%;
+  }
+
+  .no-webp .talk__image{
+    background-image: url(../img/talk/image.png); }
 
   .talk__image {
     position: absolute;
-    width: 100%;
+    width: 50%;
+    height: 100%;
     bottom: 0;
     right: 0;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[2];
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .talk__image img {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2/3;
-    -ms-grid-column-align: end;
-        justify-self: end;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: auto 100%;
   }
 }
 
@@ -1958,14 +1977,6 @@ textarea.input {
   .hero::before,
   .hero::after {
     width: 29.375rem;
-  }
-
-  .talk__container {
-    gap: 6.25rem;
-  }
-
-  .talk__image {
-    gap: 6.25rem;
   }
 }
 
@@ -2198,15 +2209,19 @@ textarea.input {
     font-size: 1.5rem;
   }
 
-  .talk__content {
-    padding-top: 10.3125rem;
+  .talk {
+    gap: 6.25rem;
   }
 
-  .talk__content {
-    padding-bottom: 6.625rem;
+  .talk__body {
+    padding-top: 10.25rem;
   }
 
-  .talk__block-header:not(:last-child) {
+  .talk__body {
+    padding-bottom: 6.6875rem;
+  }
+
+  .talk__block-header {
     margin-bottom: 1.5rem;
   }
 
@@ -2433,15 +2448,19 @@ textarea.input {
     font-size: 1.125rem;
   }
 
-  .talk__content {
-    padding-top: 2.5rem;
+  .talk {
+    gap: 1.875rem;
   }
 
-  .talk__content {
-    padding-bottom: 2.5rem;
+  .talk__body {
+    padding-top: 1.25rem;
   }
 
-  .talk__block-header:not(:last-child) {
+  .talk__body {
+    padding-bottom: 0.625rem;
+  }
+
+  .talk__block-header {
     margin-bottom: 1.125rem;
   }
 
@@ -2546,8 +2565,13 @@ textarea.input {
     grid-template-columns: auto;
   }
 
-  .talk__image {
-    left: 5%;
+  .talk__local-img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
   }
 }
 
@@ -2686,21 +2710,6 @@ textarea.input {
     -ms-grid-columns: auto;
     grid-template-columns: auto;
   }
-
-  .talk__done {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-
-  .talk__link {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
 }
 
 @media (max-width: 47.99875em) and (any-hover: none) {
@@ -2778,12 +2787,6 @@ textarea.input {
 
   .spollers-questions__item {
     padding: 0.9375rem 0.625rem;
-  }
-
-  .talk__done {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
   }
 }
 
@@ -3380,38 +3383,50 @@ textarea.input {
     }
 }
 
-@supports (padding-top: clamp( 2.5rem , 0.3070175439rem  +  10.9649122807vw , 10.3125rem )) {
-    .talk__content {
-      padding-top: clamp( 2.5rem , 0.3070175439rem  +  10.9649122807vw , 10.3125rem );
+@supports (gap: clamp( 1.875rem , 0.6469298246rem  +  6.1403508772vw , 6.25rem )) {
+    .talk {
+      gap: clamp( 1.875rem , 0.6469298246rem  +  6.1403508772vw , 6.25rem );
     }
 }
 
-@supports not (padding-top: clamp( 2.5rem , 0.3070175439rem  +  10.9649122807vw , 10.3125rem )) {
-    .talk__content {
-      padding-top: calc(2.5rem + 7.8125 * (100vw - 20rem) / 71.25);
+@supports not (gap: clamp( 1.875rem , 0.6469298246rem  +  6.1403508772vw , 6.25rem )) {
+    .talk {
+      gap: calc(1.875rem + 4.375 * (100vw - 20rem) / 71.25);
     }
 }
 
-@supports (padding-bottom: clamp( 2.5rem , 1.3421052632rem  +  5.7894736842vw , 6.625rem )) {
-    .talk__content {
-      padding-bottom: clamp( 2.5rem , 1.3421052632rem  +  5.7894736842vw , 6.625rem );
+@supports (padding-top: clamp( 1.25rem , -1.2763157895rem  +  12.6315789474vw , 10.25rem )) {
+    .talk__body {
+      padding-top: clamp( 1.25rem , -1.2763157895rem  +  12.6315789474vw , 10.25rem );
     }
 }
 
-@supports not (padding-bottom: clamp( 2.5rem , 1.3421052632rem  +  5.7894736842vw , 6.625rem )) {
-    .talk__content {
-      padding-bottom: calc(2.5rem + 4.125 * (100vw - 20rem) / 71.25);
+@supports not (padding-top: clamp( 1.25rem , -1.2763157895rem  +  12.6315789474vw , 10.25rem )) {
+    .talk__body {
+      padding-top: calc(1.25rem + 9 * (100vw - 20rem) / 71.25);
+    }
+}
+
+@supports (padding-bottom: clamp( 0.625rem , -1.076754386rem  +  8.5087719298vw , 6.6875rem )) {
+    .talk__body {
+      padding-bottom: clamp( 0.625rem , -1.076754386rem  +  8.5087719298vw , 6.6875rem );
+    }
+}
+
+@supports not (padding-bottom: clamp( 0.625rem , -1.076754386rem  +  8.5087719298vw , 6.6875rem )) {
+    .talk__body {
+      padding-bottom: calc(0.625rem + 6.0625 * (100vw - 20rem) / 71.25);
     }
 }
 
 @supports (margin-bottom: clamp( 1.125rem , 1.0197368421rem  +  0.5263157895vw , 1.5rem )) {
-    .talk__block-header:not(:last-child) {
+    .talk__block-header {
       margin-bottom: clamp( 1.125rem , 1.0197368421rem  +  0.5263157895vw , 1.5rem );
     }
 }
 
 @supports not (margin-bottom: clamp( 1.125rem , 1.0197368421rem  +  0.5263157895vw , 1.5rem )) {
-    .talk__block-header:not(:last-child) {
+    .talk__block-header {
       margin-bottom: calc(1.125rem + 0.375 * (100vw - 20rem) / 71.25);
     }
 }
@@ -3467,6 +3482,15 @@ textarea.input {
   .hero::before,
   .hero::after {
     width: 16.25rem;
+  }
+
+  .talk__image {
+    width: 100%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    background-size: auto 50%;
+    background-position: left;
   }
 }
 
@@ -3584,42 +3608,6 @@ textarea.input {
   }
 }
 
-@media (min-width: 61.99875em) and (min-width: 20em) and (max-width: 91.25em) {
-@supports (gap: clamp( 1.875rem , 0.6469298246rem  +  6.1403508772vw , 6.25rem )) {
-    .talk__container {
-      gap: clamp( 1.875rem , 0.6469298246rem  +  6.1403508772vw , 6.25rem );
-    }
-}
-
-@supports not (gap: clamp( 1.875rem , 0.6469298246rem  +  6.1403508772vw , 6.25rem )) {
-    .talk__container {
-      gap: calc(1.875rem + 4.375 * (100vw - 20rem) / 71.25);
-    }
-}
-
-@supports (gap: clamp( 1.875rem , 0.6469298246rem  +  6.1403508772vw , 6.25rem )) {
-    .talk__image {
-      gap: clamp( 1.875rem , 0.6469298246rem  +  6.1403508772vw , 6.25rem );
-    }
-}
-
-@supports not (gap: clamp( 1.875rem , 0.6469298246rem  +  6.1403508772vw , 6.25rem )) {
-    .talk__image {
-      gap: calc(1.875rem + 4.375 * (100vw - 20rem) / 71.25);
-    }
-}
-}
-
-@media (min-width: 61.99875em) and (max-width: 20em) {
-  .talk__container {
-    gap: 1.875rem;
-  }
-
-  .talk__image {
-    gap: 1.875rem;
-  }
-}
-
 @media (any-hover: hover) {
   .button:hover {
     background-color: #1F3584;
@@ -3654,4 +3642,11 @@ textarea.input {
   .item-blog__tag:hover {
     background-color: #15B2F5;
   }
+}
+
+.webp .talk__body::before{ background: url(../img/talk/decor.webp); }
+
+@media (min-width: 61.99875em){
+
+  .webp .talk__image{ background-image: url(../img/talk/image.webp); }
 }
