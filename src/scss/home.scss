@@ -967,10 +967,7 @@
     }
     &::before {
       content: '';
-      background: url('@img/talk/decor.png');
-      background-repeat: no-repeat;
-      background-position: 0 0;
-      background-size: 44%;
+      background: url('@img/talk/decor.svg') 0 0 / 44% no-repeat;
       position: absolute;
       width: 100%;
       aspect-ratio: 581 / 44;

@@ -1794,14 +1794,9 @@ textarea.input {
           flex: 0 0 100%;
 }
 
-.no-webp .talk__body::before{
-  background: url("../img/talk/decor.png"); }
-
 .talk__body::before {
   content: "";
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: 44%;
+  background: url("../img/talk/decor.svg") 0 0/44% no-repeat;
   position: absolute;
   width: 100%;
   aspect-ratio: 581/44;
@@ -3643,8 +3638,6 @@ textarea.input {
     background-color: #15B2F5;
   }
 }
-
-.webp .talk__body::before{ background: url(../img/talk/decor.webp); }
 
 @media (min-width: 61.99875em){
 
