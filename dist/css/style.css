@@ -1564,6 +1564,8 @@ textarea.input {
   max-width: 100%;
   height: 100%;
   border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .slide-reviews__name {
